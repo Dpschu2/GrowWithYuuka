@@ -1,0 +1,21 @@
+// cta scssṭ
+
+.bg-cta {
+    position: relative;
+    background-image: url(/assets/img/nutritian.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    display: flex;
+
+    .bg-overlay {
+        &:after {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+    .btn {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $headingFont;
+    }
+} 

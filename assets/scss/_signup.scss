@@ -1,0 +1,133 @@
+#get-started {
+    a {
+        &:hover {
+            color: $lightblue;
+        }
+    }
+    input[type="text"] {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.03);
+        font-size: 18px;
+        font-weight: 500;
+        padding: 14px 20px;
+        color: $lighterblue !important;
+
+        &::placeholder {
+            color: $lighterblue;
+        }
+    }
+}
+.signup-container {
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: rgba(92, 92, 92, 0.561);
+    box-shadow: 0px 6px 8px 4px rgba(0, 0, 0, 0.33);
+    margin-top: 30px;
+
+    .progress-container { 
+        text-align: center; 
+        margin-bottom: 30px; 
+    } 
+    
+    #progressbar { 
+        list-style-type: none; 
+        display: flex; 
+        justify-content: space-between; 
+        color: lightgrey; 
+    }
+    
+    #progressbar li { 
+        flex: 1; 
+        text-align: center; 
+        font-size: 15px; 
+        font-weight: bold; 
+        position: relative; 
+    }
+    
+    #progressbar li.active { 
+        color: #2F8D46; 
+    } 
+    
+    .progress { 
+        height: 20px; 
+        background-color: lightgray; 
+        border-radius: 5px; 
+        overflow: hidden; 
+    }
+    
+    .progress-bar { 
+        background-color: #2F8D46; 
+        width: 0; 
+        height: 100%; 
+        transition: width 0.4s ease-in-out; 
+    } 
+    
+    .step-container {
+        p {
+            color: #fff;
+        }
+        fieldset { 
+            background: white; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+            width: 100%; 
+            margin: 0; 
+            padding-bottom: 20px; 
+            position: relative; 
+            display: none; 
+        }
+    } 
+    
+    .step-container fieldset:first-of-type { 
+        display: block; 
+    } 
+    
+    h2 { 
+        color: #2F8D46; 
+        margin-top: 10px; 
+        text-align: center; 
+    } 
+    
+    .next-step, 
+    .previous-step { 
+        width: 100px; 
+        font-weight: bold; 
+        color: white; 
+        border: 0 none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        padding: 10px 5px; 
+        margin: 10px 5px 10px 0px; 
+        float: right; 
+    } 
+    
+    .next-step { 
+        background: #2F8D46; 
+    } 
+    
+    .previous-step { 
+        background: #616161; 
+    } 
+    
+    .next-step:hover, 
+    .next-step:focus { 
+        background-color: #1e6f3e; 
+    } 
+    
+    .previous-step:hover, 
+    .previous-step:focus { 
+        background-color: #4d4d4d; 
+    } 
+    
+    .text { 
+        color: #2F8D46; 
+        font-weight: normal; 
+    } 
+    
+    .finish { 
+        text-align: center; 
+    }
+}

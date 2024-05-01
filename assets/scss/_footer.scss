@@ -1,0 +1,47 @@
+
+.fot_social {
+    .social-icon {
+        border: 2px solid $black;
+        border-radius: 50%;
+        transition: 0.3s ease;
+        width: 42px;
+        height: 42px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 38px;
+        text-align: center;
+        
+        &:hover {
+            color: $white;
+            background-color: $black;
+            
+            .mdi {
+                fill: $white;
+            }
+        }
+        .mdi {
+            transition: 0.3s ease;
+            fill: $black;
+        }
+        .tiktok-icon {
+            transform: scale(0.8);
+        }
+    }
+} 
+
+.copy-rights {
+    line-height: 43px;
+
+    .dean {
+        transition: 0.2s ease;
+        color: $darkblue;
+
+        &:hover {
+            color: $darktext !important;
+            font-weight: 500;
+        }
+    }
+}

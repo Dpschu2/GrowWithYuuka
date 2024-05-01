@@ -1,0 +1,8 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "workbench.colorCustomizations": {
+        "editorStickyScroll.background": "#22032c",
+        "minimap.background": "#00000000",
+        "scrollbar.shadow": "#00000000"
+    }
+}

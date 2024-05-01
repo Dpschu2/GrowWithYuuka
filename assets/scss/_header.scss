@@ -1,0 +1,133 @@
+.custom-nav {
+    padding: 15px 0px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    transition: all 0.5s ease-in-out;
+    background-color: transparent; 
+
+    &.stickyadd {
+        background-color: rgba($headerbg, 0.6); 
+        padding: 8px 0;
+        box-shadow: 0px 0px 18px 1px rgba($white, 0.1);
+        backdrop-filter: saturate(180%) blur(10px);
+
+        .navbar-nav {
+            li {
+                a {
+                    color: $darktext;
+
+                    &:before {
+                        background: #000 !important;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-nav {
+        li { 
+            a {
+                color: #fff;
+                background-color: transparent !important;
+                padding: 15px 0;
+                position: relative;
+                margin: 0 7px;
+                font-weight: 600;
+                transition: all 0.4s;
+                font-family: $headingFont;
+                font-size: 16px;
+            }
+        }
+    }
+    #navbarCollapse { 
+        justify-content: flex-end;
+    } 
+}
+
+.custom-nav .navbar-nav li.active a:before,
+.custom-nav .navbar-nav li:hover a:before,
+.custom-nav .navbar-nav li:active a:before,
+.custom-nav.stickyadd .navbar-nav li.active a:before,
+.custom-nav.stickyadd .navbar-nav li:hover a:before,
+.custom-nav.stickyadd .navbar-nav li:active a:before {
+    opacity: 1;
+}
+
+.custom-nav .navbar-nav li a:before,
+.custom-nav.stickyadd .navbar-nav li a:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    height: 6px;
+    width: 6px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+} 
+
+.navbar-toggler {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #000;
+}
+
+.navbar-toggle {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+    border-color: #337ab7;
+}
+
+.logo {
+    position: relative;
+
+    img {
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+    .logo-light {
+        opacity: 1;
+    }
+    .logo-dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+.stickyadd {
+    .logo { 
+        .logo-dark {
+            opacity: 1;
+        }
+        .logo-light {
+            opacity: 0;
+        }
+    }
+}
+
+.custom-nav {
+    .navbar-brand.logo {
+        padding: 0;
+        
+        img {
+            height: 40px;
+        }
+    }
+}
+

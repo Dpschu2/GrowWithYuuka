@@ -1,0 +1,26 @@
+$black: #000000;
+$white: #FFFFFF;
+$dark: #252627;
+$headerbg: #4BB8ED;
+$lightestblue: #eaf5ff;
+$lighterblue: #daeeff;
+$lightblue: #C1E0ff;
+$mediumblue: #7DA1BF; 
+$darkblue: #2F4A60;
+$tan: #CAB29F;
+$darktext: #00294a;
+
+$bg-07: #12191d;
+$bg-06: #1d272c;
+$bg-05: #263238;
+$bg-04: #37474f;
+$bg-03: #90a4ae;
+$bg-02: #c6d2d9;
+$bg-01: #e4eaee;
+ 
+@font-face {
+    font-family: "Chido";
+    src: url('/assets/fonts/chido.otf') format('opentype');
+}
+$headingFont: "Chido"; 
+$bodyFont: "Barlow";
