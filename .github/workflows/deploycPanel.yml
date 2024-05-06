@@ -23,4 +23,4 @@ jobs:
       with:
         server: ftp.deanpschulz.com
         username: yuuka@gwyuuka.com
-        password: ${{ secrets.password }}
+        password: ${{ secrets.FTP_PASSWORD }}
