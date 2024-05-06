@@ -1080,5 +1080,5 @@ button:focus {
   filter: drop-shadow(0px 0px 0px rgba(150, 150, 150, 0.561));
 }
 .social_home li a:hover .mdi, .social_home li a:hover .mdi:before {
-  filter: drop-shadow(0px 2px 5px rgba(150, 150, 150, 0.561));
+  filter: drop-shadow(0px 2px 5px rgba(150, 150, 150, 0.561)); 
 }
