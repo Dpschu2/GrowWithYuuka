@@ -15,8 +15,7 @@
     "gulp-cli": "^3.0.0",
     "jquery": "^3.4.1",
     "jquery.simple-text-rotator": "0.0.1",
-    "slick-carousel": "^1.8.1",
-    "webpack": "^5.91.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^9.2.0",
@@ -28,6 +27,7 @@
     "grunt-svgstore": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0",
+    "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
