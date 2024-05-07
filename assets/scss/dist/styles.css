@@ -2,7 +2,7 @@
   font-family: "Chido";
   src: url("/assets/fonts/chido.otf") format("opentype");
 }
-.btn {
+.btn, .deantest {
   padding: 12px 26px;
 }
 
