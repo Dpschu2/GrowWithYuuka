@@ -1,4 +1,18 @@
 
+.footer {
+    .footer-container {
+        @media(min-width: 800px) {
+            margin: 0 40px;
+        }
+        .footer-content {
+            flex-direction: column-reverse;
+
+            @media(min-width: 800px) {
+                flex-direction: row
+            }
+        }
+    }
+} 
 .fot_social {
     .social-icon {
         border: 2px solid $black;
@@ -31,10 +45,20 @@
         }
     }
 } 
-
 .copy-rights {
     line-height: 43px;
+    text-align: center; 
 
+    @media(max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.9;
+    }
+    @media(min-width: 800px) {
+        text-align: left;
+    }
     .dean {
         transition: 0.2s ease;
         color: $darkblue;

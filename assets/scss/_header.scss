@@ -7,19 +7,39 @@
     transition: all 0.5s ease-in-out;
     background-color: transparent; 
 
+    .navbar:not(.stickyadd) {
+        .navbar-nav {
+            li {
+                a {
+                    color: $lighterblue;
+                }
+            }
+        }
+    }
     &.stickyadd {
         background-color: rgba($headerbg, 0.6); 
         padding: 8px 0;
         box-shadow: 0px 0px 18px 1px rgba($white, 0.1);
         backdrop-filter: saturate(180%) blur(10px);
+        box-shadow: 0px 3px 14px 4px rgba(0,0,0,0.11);
 
         .navbar-nav {
             li {
                 a {
-                    color: $darktext;
-
+                    color: $lighterblue;
+                    text-align: center;
+                    
                     &:before {
-                        background: #000 !important;
+                        background: #fff !important;
+                    } 
+                    @media(min-width: 991px) {
+                        
+                    }
+                }
+                &.active {
+                    a {
+                        color: $lighterblue;
+
                     }
                 }
             }
@@ -28,7 +48,7 @@
     .navbar-nav {
         li { 
             a {
-                color: #fff;
+                color: $lighterblue;
                 background-color: transparent !important;
                 padding: 15px 0;
                 position: relative;
@@ -37,6 +57,12 @@
                 transition: all 0.4s;
                 font-family: $headingFont;
                 font-size: 16px;
+            }
+            &.active {
+                a {
+                    color: $darktext;
+
+                }
             }
         }
     }
@@ -72,10 +98,10 @@
 } 
 
 .navbar-toggler {
-    font-size: 24px;
-    margin-top: 5px;
+    font-size: 40px;
     margin-bottom: 0px;
-    color: #000;
+    color: #fff;
+    border: none;
 }
 
 .navbar-toggle {
