@@ -155,7 +155,7 @@ button:focus {
         &:after {
             content: '';
             position: absolute;
-            bottom: 35px;
+            bottom: 34px;
             left: 70%;
             width: 0;
             height: 0;
@@ -170,8 +170,8 @@ button:focus {
 } 
 
 .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     position: relative;
     background-color: #fff;
 
@@ -198,14 +198,14 @@ button:focus {
     }
     &.section-theme1 {
         // background-color: $lighterblue !important;
-        background: linear-gradient(135deg, #1abc9c 0%, #8e44ad 100%);
+        background: linear-gradient(135deg, #1abc9c 0%, #50b1f8 100%);
         
         * {
             // color: $darktext !important;
             color: $lighterblue;
         }
     }
-}
+}\
 
 .bg-dark {
     background-color: #000;
@@ -290,16 +290,12 @@ button:focus {
 }
 
 .bg-overlay {
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .social_home {
@@ -312,6 +308,11 @@ button:focus {
        height: 45px;
        margin: 15px;
 
+       @media(max-width: 767px) {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+       }
 		a {
             width: 100%;
             height: 100%;
@@ -319,7 +320,7 @@ button:focus {
             color: #ffffff;
             display: inline-block;
             text-align: center;
- 
+
 			.mdi {
 				fill: $white;
                 width: 100%;
@@ -345,3 +346,53 @@ button:focus {
 		}
 	}
 } 
+.ff-b {
+    font-family: $bodyFont;
+}
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}

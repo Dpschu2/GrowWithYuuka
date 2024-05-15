@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/css/mobiriseicons.css">
@@ -30,30 +31,28 @@
     <!-- MARK: NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top custom-nav sticky">
         <div class="container">
-            <a class='navbar-brand logo' href='/'>
-                <img src="assets/img/logo.png" alt="Grow with Yuuka" class="img-fluid logo-light"> 
-                <img src="assets/img/logo-blue.png" alt="Grow with Yuuka" class="img-fluid logo-dark">
+            <a class='navbar-brand logo-link' href='/'>
+                <svg class="logo"><use xlink:href="icon-sprite.svg#icon-logo" /></svg>
             </a>
- 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="mdi mdi-menu"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a href="#home" class="nav-link">Home</a>
+                    <li class="nav-item nav-home active">
+                        <a href="#home-navLink" class="nav-link">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#get-started" class="nav-link">Lets Go</a>
+                    <li class="nav-item nav-get-started">
+                        <a href="#get-started-navLink" class="nav-link">Lets Go</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                    <li class="nav-item nav-about">
+                        <a href="#about-navLink" class="nav-link">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
+                    <li class="nav-item nav-services">
+                        <a href="#services-navLink" class="nav-link">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
+                    <li class="nav-item nav-contact">
+                        <a href="#contact-navLink" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -62,12 +61,13 @@
     <!-- END Header -->
 
     <!-- MARK: HOME -->
-    <section class="home-bg section h-100vh" id="home">
-        <div class="bg-overlay slider">
+    <span id="home-navLink" class="navLink"></span>
+    <section class="home-bg section h-100vh" id="home" data-nav="home">
+        <div class="slider">
             <ul class="items">
-                <li class="item current"><img src="/assets/img/homeSlides/deadlift.jpg"></li>
-                <li class="item"><img src="/assets/img/homeSlides/program.jpg"></li>
-                <li class="item"><img src="/assets/img/homeSlides/skyline.jpg"></li>
+                <li class="item current"><img src="/assets/img/homeSlides/deadlift.jpg"><span class="bg-overlay"></span><h2>Personal Trainer.</h2></li>
+                <li class="item"><img src="/assets/img/homeSlides/stretch.jpg"><span class="bg-overlay"></span><h2>Life Coach.</h2></li>
+                <li class="item"><img src="/assets/img/homeSlides/program.jpg"><span class="bg-overlay"></span><h2>Custom Programming.</h2></li>
             </ul>
         </div>
         <div class="container z-index home-content">
@@ -75,8 +75,8 @@
                 <div class="col-lg-12">
                     <div class="text-white text-center">
                         <h1>GROW WITH YUUKA</h1>
-                        <h2 class="header_title mb-0 mt-3"><span class="simple-text-rotate fw-bold">Personal Trainer.,Custom Programming.,Life Coach.</span></h2>
-                        <ul class="social_home list-unstyled text-center pt-4">
+                        <h2 class="header_title mb-0 mt-3">Custom Programming.</h2>
+                        <ul class="social_home list-unstyled text-center pt-1">
                             <li><a href="https://www.instagram.com/grow.withyuuka/"><svg class="mdi" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>instagram</title><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg></a></li>
                             <li><a href="https://www.tiktok.com/@yuuka.ike"><svg class="mdi tiktok-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
                             <li><a href="mailto:yuukaikeshita@gmail.com"><svg class="mdi" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>gmail</title><path d="M20,18H18V9.25L12,13L6,9.25V18H4V6H5.2L12,10.25L18.8,6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" /></svg></a></li>
@@ -96,87 +96,110 @@
     <!--END HOME-->
 
     <!-- MARK: GET STARTED -->
-    <section class="section section-theme1" id="get-started">
+    <span id="get-started-navLink" class="navLink"></span>
+    <section class="section section-theme1" id="get-started" data-nav="get-started">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
+            <div class="row get-started-content justify-content-center">
+                <div class="col-md-5">
                     <div class="text-center mx-auto section-main-title">
-                        <h2><span class="fw-bold">Pre-Consultation</span></h2>
+                        <h2><span class="fw-bold ff-b">Welcome, lets start this journey!</span></h2>
                         <div class="main-title-border">
                             <i class="mdi mdi-asterisk"></i>
                         </div>
-                        <h4 class="mt-3">Hiii & Welcome!!!</h4>
-                        <p class=" mx-auto mt-2"> Thank you for your interest in growing with yuuka (me!). Please complete these questions pre-consultation to get your journey started💫 If you have any questions, feel free to DM or email me <a href="mailto:grow.withyuuka@gmail.com">grow.withyuuka@gmail.com</a></p>
+                        <p class=" mx-auto mt-2">Thank you for your interest in growing with yuuka (me!). Fill out the coaching application below to get your journey started💫 Once submitted, we will be reaching out to you to set up next steps. If you have any questions, feel free to DM or email me <a href="mailto:grow.withyuuka@gmail.com"><b>grow.withyuuka@gmail.com</b></a></p>
                     </div>
                 </div>
-            </div>
-            <div class="row mb-5 pt-4">
-                <div class="col-lg-12">
-                    <div class="text-center subcribe-newslatter mt-4">
-                        <form class="mx-auto position-relative">
-                            <input type="text" placeholder="Email" required>
-                            <button type="submit" class="btn btn-custom">Subcribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                <div class="col-md-7">
+                    <div class="signup-container">
+                        <div class="progress-container">
+                            <hr class="progress-bar-back" />
+                            <hr class="progress-bar-front" />
+                        </div>
+                        <div class="form-container">
+                            <div class="form" id="form-1">
+                                <h3>Full Name:</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="firstName">First:</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="First">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last:</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last">
+                                    </div>
+                                </form>
+                            </div>
 
-            <div class="signup-container">
-                <div class="progress-container"> 
-                    <div class="progress"> 
-                        <div class="progress-bar"></div> 
+                            <div class="form" id="form-2">
+                                <h3>Contact:</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number:</label>
+                                        <input type="number" class="form-control" id="phoneNumber">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailAdd">Email Address:</label>
+                                        <input type="email" class="form-control" id="emailAdd">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="form" id="form-3">
+                                <h3>Address:</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="country">Country:</label>
+                                        <input type="text" class="form-control" id="country">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zipCode">Zip Code:</label>
+                                        <input type="number" class="form-control" id="zipCode">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="form" id="form-4">
+                                <h3>Birth:</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="dateBirth">Date of Birth:</label>
+                                        <input type="date" class="form-control" id="dateBirth">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="placeBirth">Place of Birth:</label>
+                                        <input type="text" class="form-control" id="placeBirth">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="form" id="form-5">
+                                <h3>Account:</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="username">Username:</label>
+                                        <input type="text" class="form-control" id="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="number" class="form-control" id="password">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="button-container">
+                            <button class="btn btn-prev" id="prev">Back</button>
+                            <button class="btn btn-next" id="next">Next</button>
+                        </div>
                     </div> 
-                </div> 
-                <div class="step-container"> 
-                    <h2>Pre-Consultation</h2>
-                    
-                    <fieldset> 
-
-                        <input type="button"
-                               name="next-step"
-                               class="next-step"
-                               value="Next Step" /> 
-                    </fieldset> 
-                    <fieldset> 
-                        <h2>Welcome To GFG Step 2</h2> 
-                        <input type="button"
-                               name="next-step" 
-                               class="next-step" 
-                               value="Next Step" /> 
-                        <input type="button"
-                               name="previous-step" 
-                               class="previous-step" 
-                               value="Previous Step" /> 
-                    </fieldset> 
-                    <fieldset> 
-                        <h2>Welcome To GFG Step 3</h2> 
-                        <input type="button" 
-                               name="next-step" 
-                               class="next-step" 
-                               value="Final Step" /> 
-                        <input type="button" 
-                               name="previous-step" 
-                               class="previous-step" 
-                               value="Previous Step" /> 
-                    </fieldset> 
-                    <fieldset> 
-                        <div class="finish"> 
-                            <h2 class="text"> 
-                                <strong>FINISHED</strong> 
-                            </h2> 
-                        </div> 
-                        <input type="button" 
-                               name="previous-step" 
-                               class="previous-step"
-                               value="Previous Step" /> 
-                    </fieldset> 
-                </div> 
-            </div> 
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- MARK: ABOUT -->
-    <section class="section section-theme2" id="about">
+    <span id="about-navLink" class="navLink"></span>
+    <section class="section section-theme2" id="about" data-nav="about">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 video-container">
@@ -214,7 +237,8 @@
     <!-- END ABOUT -->
 
     <!-- MARK: Health -->
-    <section class="section bg-cta">
+    <span id="health-navLink" class="navLink"></span>
+    <section id="health" class="section bg-cta" data-nav="about">
         <div class="bg-overlay"></div>
         <div class="container z-index">
             <div class="row">
@@ -232,7 +256,8 @@
     <!-- END CTA -->
 
     <!-- MARK: SERVICES -->
-    <section class="section bg-light section-theme3" id="services">
+    <span id="services-navLink" class="navLink"></span>
+    <section class="section bg-light section-theme3" id="services" data-nav="services">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -320,7 +345,8 @@
     <!-- END SERVICES -->
 
     <!-- MARK: CONTACT -->
-    <section class="section section-theme4" id="contact">
+    <span id="contact-navLink" class="navLink"></span>
+    <section class="section section-theme4" id="contact" data-nav="contact">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -337,20 +363,11 @@
                 <div class="col-lg-4">
                     <div class="text-center mt-4">
                         <div>
-                            <i class="mbri-mobile2 text-custom h2"></i>
-                        </div>
-                        <div class="mt-2">
-                            <p class="mb-0 fw-bold">Call Me On</p>
-                            <p class=""><a href="tel:+13125328210">(312) 532-8210</a></p>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <div>
                             <i class="mbri-letter text-custom h2"></i>
                         </div>
                         <div class="mt-2">
                             <p class="mb-0 fw-bold">Email Me At</p>
-                            <p class=""><a href="mailto:yuukaikeshita@gmail.com">yuukaikeshita@gmail.com</a></p>
+                            <p class=""><a href="mailto:grow.withyuuka@gmail.com">grow.withyuuka@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="text-center mt-4">
@@ -359,7 +376,7 @@
                         </div>
                         <div class="mt-2">
                             <p class="mb-0 fw-bold">Location</p>
-                            <p class=""><a href="https://maps.app.goo.gl/MgoNS4vy9iRwtg7k9" target="_blank">Wicker Park, Chicago</a></p>
+                            <p class=""><a href="https://www.google.com/maps/place/Chicago,+IL+60616/@41.8425741,-87.642695,14z/data=!3m1!4b1!4m6!3m5!1s0x880e2c6f91f0f875:0x5feeb3783fd6dab3!8m2!3d41.8403395!4d-87.6137011!16s%2Fm%2F01_6qjr?entry=ttu" target="_blank">Chicago, IL</a></p>
                         </div>
                     </div>
                 </div>
@@ -447,6 +464,7 @@
     <script src="assets/js/isotope.js"></script>     
     <script src="assets/js/contact.js"></script>      
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/signup.js"></script>
     <script src="assets/js/global.js"></script>
 </body>
 

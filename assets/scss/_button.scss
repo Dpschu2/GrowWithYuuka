@@ -60,8 +60,13 @@
     transition: all 0.5s;
     font-family: $bodyFont;
     font-size: 16px;
-
+    border-radius: 46px;
     text-transform: capitalize;
+    padding: 0 30px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-custom:hover,

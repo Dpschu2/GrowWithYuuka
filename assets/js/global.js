@@ -1,11 +1,22 @@
 $(document).ready(() => {
-    $(".simple-text-rotate").textrotator({
-        animation: "fade",
-        speed: 3000
-    });
     setInterval(homeSlider, 6000);
     signUpForm();
+    $(window).scroll(function(){
+        const sw = $(this).width();
+        const windowtop = $(this).scrollTop();
+        const headerHeight = sw >= 768 ? 70 : 65;
+        const $activeSection = $('.section')
+            .filter(function(){ return (windowtop > ($(this).offset().top - headerHeight)); })
+            .last();
+        const sectionId = $activeSection.data('nav');
+        const $navItem = $(`.nav-${sectionId}`);
+        if (!$navItem.hasClass('active')) {
+            $('.nav-item.active').removeClass('active');
+            $navItem.addClass('active');
+        }
+    });
 });
+
 const homeSlider = (flag, num) => {
     let current = $(".item.current"),
         next,

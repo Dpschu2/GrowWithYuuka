@@ -1,5 +1,5 @@
 .custom-nav {
-    padding: 15px 0px;
+    padding: 8px 0px;
     width: 100%;
     border-radius: 0px;
     z-index: 999;
@@ -16,8 +16,8 @@
             }
         }
     }
-    &.stickyadd {
-        background-color: rgba($headerbg, 0.6); 
+    &.stickyadd, &:has(.navbar-toggler[aria-expanded="true"]) {
+        background-color: rgba($darktext, 0.6); 
         padding: 8px 0;
         box-shadow: 0px 0px 18px 1px rgba($white, 0.1);
         backdrop-filter: saturate(180%) blur(10px);
@@ -26,20 +26,17 @@
         .navbar-nav {
             li {
                 a {
-                    color: $lighterblue;
+                    color: $white;
                     text-align: center;
                     
                     &:before {
-                        background: #fff !important;
+                        background: $white !important;
                     } 
-                    @media(min-width: 991px) {
-                        
-                    }
                 }
                 &.active {
                     a {
-                        color: $lighterblue;
-
+                        color: $white;
+                        font-weight: bold;
                     }
                 }
             }
@@ -48,20 +45,21 @@
     .navbar-nav {
         li { 
             a {
-                color: $lighterblue;
+                color: $white;
                 background-color: transparent !important;
                 padding: 15px 0;
                 position: relative;
                 margin: 0 7px;
                 font-weight: 600;
-                transition: all 0.4s;
+                transition: all 0.4s ease;
                 font-family: $headingFont;
                 font-size: 16px;
+                text-align: center;
             }
             &.active {
                 a {
-                    color: $darktext;
-
+                    color: $white;
+                    font-weight: bold;
                 }
             }
         }
@@ -69,6 +67,18 @@
     #navbarCollapse { 
         justify-content: flex-end;
     } 
+}
+.navLink {
+    display: block;
+    visibility: hidden;
+    position: relative;
+    margin-top: -65px;
+    height: 65px;
+
+    @media(min-width: 768px) {
+        margin-top: -70px;
+        height: 70px;
+    }
 }
 
 .custom-nav .navbar-nav li.active a:before,
@@ -95,6 +105,7 @@
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    cursor: pointer;
 } 
 
 .navbar-toggler {
@@ -118,31 +129,26 @@
     border-color: #337ab7;
 }
 
-.logo {
+.logo-link {
     position: relative;
 
-    img {
+    .logo {
         display: inline-block;
+        fill: #fff;
         transition: 0.3s ease;
-    }
-    .logo-light {
-        opacity: 1;
-    }
-    .logo-dark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
+        height: 44px;
+        width: 100px;
+
+        @media(max-width: 767px) {
+            height: 35px;
+        }
     }
 }
 
 .stickyadd {
-    .logo { 
-        .logo-dark {
-            opacity: 1;
-        }
-        .logo-light {
-            opacity: 0;
+    .logo-link { 
+        .logo {
+            fill: $lighterblue;
         }
     }
 }

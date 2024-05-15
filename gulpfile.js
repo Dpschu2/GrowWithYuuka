@@ -8,5 +8,5 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['assets/scss/*.scss', 'index.html'], gulp.series('sass'));
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/_*.scss', 'index.html'], gulp.series('sass'));
 });
