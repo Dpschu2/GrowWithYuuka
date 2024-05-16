@@ -13,8 +13,13 @@ jobs:
       with:
         node-version: 18.x
 
-    - name: Build project
-      run: npm run build
+    - name: Install deps
+      run: |
+        npm ci
+        
+    - name: Run build
+      run: |
+        npm run build
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
