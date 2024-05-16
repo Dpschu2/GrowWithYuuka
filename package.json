@@ -10,38 +10,30 @@
     "url": "https://github.com/Dpschu2/GrowWithYuuka"
   },
   "dependencies": {
-    "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.4.1",
-    "del": "^7.1.0",
     "gulp": "^5.0.0",
     "gulp-cli": "^3.0.0",
     "jquery": "^3.4.1",
-    "jquery.simple-text-rotator": "0.0.1",
-    "lodash-webpack-plugin": "^0.11.6",
-    "mini-css-extract-plugin": "^2.9.0",
-    "slick-carousel": "^1.8.1",
-    "webpack-merge": "^5.10.0"
+    "jquery.simple-text-rotator": "0.0.1"
   },
   "devDependencies": {
-    "eslint": "^9.2.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "grunt": "^1.6.1",
     "grunt-cli": "^1.3.2",
     "grunt-eslint": "^20.0.0",
     "grunt-run": "^0.8.1",
     "grunt-scss-lint": "^0.5.0",
-    "grunt-svgstore": "^2.0.0",
+    "grunt-svgstore": "^1.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0",
-    "webpack": "^5.90.3",
-    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "build": "npx webpack --config webpack.prod.js",
-    "buildDev": "npx webpack --config webpack.dev.js",
-    "lighthouse": "npx lighthouse --config-path=lighthouse-config.js --quiet --output html --chrome-flags=\"--headless\" $URL",
-    "test": "npx jest",
-    "stylelint": "npx stylelint **/*.scss",
-    "stylelint:fix": "npx stylelint --fix **/*.scss"
+    "test": "npx jest"
   }
 }
