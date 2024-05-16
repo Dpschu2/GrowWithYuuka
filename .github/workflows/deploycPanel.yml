@@ -15,7 +15,7 @@ jobs:
 
     - name: Run build 
       run: |
-        CI='' npm run build
+        npx webpack --config webpack.prod.js
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
