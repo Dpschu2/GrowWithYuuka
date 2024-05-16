@@ -19,7 +19,8 @@
     "jquery.simple-text-rotator": "0.0.1",
     "lodash-webpack-plugin": "^0.11.6",
     "mini-css-extract-plugin": "^2.9.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "webpack-merge": "^5.10.0"
   },
   "devDependencies": {
     "eslint": "^9.2.0",
