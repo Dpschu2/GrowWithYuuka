@@ -435,7 +435,8 @@
   font-size: 12px;
   filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.9));
   transform: translatey(0px);
-  animation: float 6s ease-in-out infinite;
+  animation: float 6s linear infinite;
+  animation-timing-function: linear;
 }
 .home-bg .scroll_down i:after {
   content: "";
@@ -516,7 +517,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease;
 }
 .slider .items .item h2 {
   position: absolute;
@@ -536,7 +537,7 @@
   color: #fff;
   z-index: 2;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease;
   top: 84px;
   height: calc(100dvh - 302px);
 }
@@ -560,9 +561,21 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease;
+  z-index: 0;
+}
+.slider .items .item.last {
+  animation: fadeOut 2s ease;
+  animation-fill-mode: forwards;
+}
+.slider .items .item.last .bg-overlay {
+  opacity: 0;
 }
 .slider .items .item.current {
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+.slider .items .item.current .bg-overlay {
   opacity: 1;
 }
 .slider .items .item.current h2 {
@@ -571,7 +584,34 @@
 .slider .items .item.current img {
   opacity: 1;
 }
+.slider .items .item.onDeck {
+  z-index: 1;
+  opacity: 1;
+}
+.slider .items .item.onDeck .bg-overlay {
+  opacity: 0;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
 .slider .slide {
   position: absolute;
   top: 0;
@@ -780,12 +820,13 @@
   border-radius: 20px;
   backdrop-filter: blur(10px);
   color: rgba(92, 92, 92, 0.561);
-  box-shadow: 0px 6px 8px 4px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.24);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px 110px 50px;
+  background: #88cfffa8;
 }
 .signup-container * {
   margin: 0;
@@ -814,7 +855,7 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 20px 0 10px;
 }
 .signup-container h1 {
   font-weight: bold;
@@ -822,7 +863,7 @@
 .signup-container .progress-bar-back,
 .signup-container .progress-bar-front {
   position: absolute;
-  height: 4px;
+  height: 8px;
   width: 100%;
   background-color: #646464;
   border: none;
@@ -1089,7 +1130,7 @@ button:focus {
 .back_top .speech-bubble:after {
   content: "";
   position: absolute;
-  bottom: 34px;
+  top: 100%;
   left: 70%;
   width: 0;
   height: 0;
@@ -1102,8 +1143,8 @@ button:focus {
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
   background-color: #fff;
 }
@@ -1266,6 +1307,10 @@ button:focus {
 }
 .social_home li a:hover .mdi, .social_home li a:hover .mdi:before {
   filter: drop-shadow(0px 2px 5px rgba(150, 150, 150, 0.561));
+}
+
+.ff-b {
+  font-family: "Barlow";
 }
 
 @-webkit-keyframes breathing {

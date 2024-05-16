@@ -155,7 +155,7 @@ button:focus {
         &:after {
             content: '';
             position: absolute;
-            bottom: 34px;
+            top: 100%;
             left: 70%;
             width: 0;
             height: 0;
@@ -205,7 +205,7 @@ button:focus {
             color: $lighterblue;
         }
     }
-}\
+}
 
 .bg-dark {
     background-color: #000;

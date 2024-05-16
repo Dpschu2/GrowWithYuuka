@@ -1,5 +1,12 @@
 $(document).ready(() => {
-    setInterval(homeSlider, 6000);
+    setInterval(() => {
+        let current = $(".item.current");
+        let next = current.is(":last-child") ? $(".item").first() : current.next();
+        let onDeck = next.is(":last-child") ? $(".item").first() : next.next();
+        current.addClass('last').removeClass("current");
+        next.removeClass('onDeck').addClass("current");
+        onDeck.addClass("onDeck").removeClass('last');
+    }, 6000);
     signUpForm();
     $(window).scroll(function(){
         const sw = $(this).width();
@@ -17,23 +24,6 @@ $(document).ready(() => {
     });
 });
 
-const homeSlider = (flag, num) => {
-    let current = $(".item.current"),
-        next,
-        index;
-    if (!flag) {
-        next = current.is(":last-child") ? $(".item").first() : current.next();
-        index = next.index();
-    } else if (flag === 'dot') {
-        next = $(".item").eq(num);
-        index = num;
-    } else {
-        next = current.is(":first-child") ? $(".item").last() : current.prev();
-        index = next.index();
-    }
-    next.addClass("current");
-    current.removeClass("current");
-}
 const signUpForm = () => {
     document.addEventListener("DOMContentLoaded", function () { 
         console.log('content loaded');
