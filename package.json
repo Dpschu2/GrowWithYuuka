@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "core-js": "^3.4.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "next-progressbar": "^1.0.0"
   },
   "devDependencies": {
     "gulp-cli": "^3.0.0",
@@ -24,9 +25,15 @@
     "grunt-scss-lint": "^0.5.0",
     "grunt-svgstore": "^2.0.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "CI='' npm run build"
+    "build": "npx webpack --config webpack.prod.js",
+    "lighthouse": "npx lighthouse --config-path=lighthouse-config.js --quiet --output html --chrome-flags=\"--headless\" $URL",
+    "test": "npx jest",
+    "stylelint": "npx stylelint **/*.scss",
+    "stylelint:fix": "npx stylelint --fix **/*.scss"
   }
 }
