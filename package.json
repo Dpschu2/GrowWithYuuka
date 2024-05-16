@@ -27,7 +27,7 @@
     "grunt-eslint": "^20.0.0",
     "grunt-run": "^0.8.1",
     "grunt-scss-lint": "^0.5.0",
-    "grunt-svgstore": "^1.0.0",
+    "grunt-svgstore": "^1.0.0", 
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0",
     "webpack-cli": "^5.1.4"
