@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "core-js": "^3.4.1",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
     "jquery": "^3.4.1",
-    "next-progressbar": "^1.0.0"
+    "jquery.simple-text-rotator": "0.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^9.2.0",
@@ -22,8 +25,6 @@
     "grunt-run": "^0.8.1",
     "grunt-scss-lint": "^0.5.0",
     "grunt-svgstore": "^2.0.0",
-    "gulp": "^5.0.0",
-    "gulp-cli": "^3.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0",
     "webpack": "^5.90.3",
@@ -31,6 +32,7 @@
   },
   "scripts": {
     "build": "npx webpack --config webpack.prod.js",
+    "buildDev": "npx webpack --config webpack.dev.js",
     "lighthouse": "npx lighthouse --config-path=lighthouse-config.js --quiet --output html --chrome-flags=\"--headless\" $URL",
     "test": "npx jest",
     "stylelint": "npx stylelint **/*.scss",
