@@ -25,5 +25,9 @@
     "grunt-svgstore": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0"
+  },
+  "scripts": {
+    "build": "npx webpack --config webpack.prod.js",
+    "test": "npx jest"
   }
 }
