@@ -10,6 +10,7 @@
     "url": "https://github.com/Dpschu2/GrowWithYuuka"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.4.1",
     "gulp": "^5.0.0",
     "gulp-cli": "^3.0.0",
