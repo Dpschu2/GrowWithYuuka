@@ -8,12 +8,6 @@ const
 module.exports = {
     bail: true,
     context: __dirname,
-    entry: {
-        main: './assets/js/app.js',
-        head_async: ['lazysizes'],
-        font: './assets/js/theme/common/font.js',
-        polyfills: './assets/js/polyfills.js',
-    },
     module: {
         rules: [{
             test: /\.(scss|css)$/,
@@ -106,10 +100,6 @@ module.exports = {
     resolve: {
         alias: {
             jquery: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-            jstree: path.resolve(__dirname, 'node_modules/jstree/dist/jstree.min.js'),
-            lazysizes: path.resolve(__dirname, 'node_modules/lazysizes/lazysizes.min.js'),
-            'slick-carousel': path.resolve(__dirname, 'node_modules/slick-carousel/slick/slick.min.js'),
-            'svg-injector': path.resolve(__dirname, 'node_modules/svg-injector/dist/svg-injector.min.js'),
         },
     },
 };
