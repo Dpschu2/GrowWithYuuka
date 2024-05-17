@@ -509,6 +509,7 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+  background-color: #48494a8b;
 }
 .slider .items .item {
   position: absolute;
@@ -517,7 +518,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: all 2s ease;
 }
 .slider .items .item h2 {
   position: absolute;
@@ -534,10 +535,9 @@
   white-space: nowrap;
   container-name: mainTitle;
   line-height: 1.1;
-  color: #fff;
-  z-index: 2;
+  color: #ffffff;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 2s ease-in-out;
   top: 84px;
   height: calc(100dvh - 302px);
 }
@@ -561,55 +561,69 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 2s ease;
-  z-index: 0;
+  transition: all 2s ease-in-out;
 }
 .slider .items .item.last {
   animation: fadeOut 2s ease;
   animation-fill-mode: forwards;
 }
-.slider .items .item.last .bg-overlay {
-  opacity: 0;
+.slider .items .item.last h2 {
+  animation: fadeOutH 2s ease;
+  animation-fill-mode: forwards;
 }
 .slider .items .item.current {
   opacity: 1;
   animation-fill-mode: forwards;
-}
-.slider .items .item.current .bg-overlay {
-  opacity: 1;
+  order: 2;
 }
 .slider .items .item.current h2 {
-  opacity: 1;
+  animation: fadeInH 2s ease;
+  animation-fill-mode: forwards;
 }
 .slider .items .item.current img {
   opacity: 1;
 }
 .slider .items .item.onDeck {
-  z-index: 1;
-  opacity: 1;
-}
-.slider .items .item.onDeck .bg-overlay {
   opacity: 0;
+  order: 1;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    z-index: 1;
   }
   100% {
     opacity: 1;
-    z-index: 2;
   }
 }
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    z-index: 2;
   }
   100% {
     opacity: 0;
-    z-index: 0;
+  }
+}
+@keyframes fadeInH {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutH {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .slider .slide {
@@ -813,6 +827,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  padding-right: 40px;
 }
 
 .signup-container {
@@ -831,7 +846,6 @@
 .signup-container * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
 }
 .signup-container body {
   display: flex;
@@ -1086,6 +1100,15 @@ button:focus {
     transform: rotate(360deg);
   }
 }
+.container {
+  max-width: 1476px;
+  width: 100%;
+  padding: 0 16px;
+}
+.container.large {
+  max-width: 1716px;
+}
+
 .back_top {
   text-align: center;
   position: fixed;
@@ -1228,6 +1251,15 @@ button:focus {
   max-width: 720px;
   font-size: 18px;
 }
+.section-main-title h2 {
+  font-size: 40px;
+  line-height: 1.1;
+}
+@media (min-width: 801px) {
+  .section-main-title h2 {
+    font-size: 70px;
+  }
+}
 
 .main-title-border::after,
 .main-title-border::before {
@@ -1351,5 +1383,77 @@ button:focus {
     -webkit-transform: scale(0.9);
     -ms-transform: scale(0.9);
     transform: scale(0.9);
+  }
+}
+.animation-element.slide-down {
+  position: relative;
+  top: -100px;
+  opacity: 0.3;
+  transition: 1.5s ease;
+}
+.animation-element.slide-down.in-view {
+  animation: slideDown 1.5s ease forwards;
+  opacity: 1;
+}
+@keyframes slideDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+.animation-element.slide-up {
+  position: relative;
+  bottom: -100px;
+  opacity: 0.3;
+  transition: 1.5s ease;
+}
+.animation-element.slide-up.in-view {
+  animation: slideUp 1.5s ease forwards;
+  opacity: 1;
+}
+@keyframes slideUp {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.animation-element.slide-left {
+  position: relative;
+  right: -100px;
+  opacity: 0.3;
+  transition: 1.5s ease;
+}
+.animation-element.slide-left.in-view {
+  animation: slideLeft 1.5s ease forwards;
+  opacity: 1;
+}
+@keyframes slideLeft {
+  from {
+    right: -100px;
+  }
+  to {
+    right: 0;
+  }
+}
+.animation-element.slide-right {
+  position: relative;
+  left: -100px;
+  opacity: 0.3;
+  transition: 1.5s ease;
+}
+.animation-element.slide-right.in-view {
+  animation: slideRight 1.5s ease forwards;
+  opacity: 1;
+}
+@keyframes slideRight {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
   }
 }
