@@ -1,66 +1,71 @@
 "use strict";
 
 $(document).ready(function () {
-  $(".simple-text-rotate").textrotator({
-    animation: "fade",
-    speed: 3500
-  });
-  signUpForm();
+  homeSlider();
+  scrollNav();
+  initAnimations();
 });
 
-var signUpForm = function signUpForm() {
-  console.log('test');
-  document.addEventListener("DOMContentLoaded", function () {
-    var progressListItems = document.querySelectorAll("#progressbar li");
-    var progressBar = document.querySelector(".progress-bar");
-    var currentStep = 0;
+var homeSlider = function homeSlider() {
+  setInterval(function () {
+    var current = document.querySelector('.slide.active');
 
-    var updateProgress = function updateProgress() {
-      var percent = currentStep / (progressListItems.length - 1) * 100;
-      progressBar.style.width = percent + "%";
-      progressListItems.forEach(function (item, index) {
-        if (index === currentStep) {
-          item.classList.add("active");
+    if (current.nextElementSibling) {
+      current.nextElementSibling.classList.add('active');
+    } else {
+      current.parentElement.firstElementChild.classList.add('active');
+    }
+
+    ;
+    current.classList.remove('active');
+  }, 6000);
+};
+
+var scrollNav = function scrollNav() {
+  $(window).scroll(function () {
+    var sw = $(this).width();
+    var windowtop = $(this).scrollTop();
+    var headerHeight = sw >= 768 ? 75 : 70;
+    var $activeSection = $('.section').filter(function () {
+      return windowtop > $(this).offset().top - headerHeight;
+    }).last();
+    var sectionId = $activeSection.data('nav');
+    var $navItem = $(".nav-".concat(sectionId));
+
+    if (!$navItem.hasClass('active')) {
+      $('.nav-item.active').removeClass('active');
+      $navItem.addClass('active');
+    }
+  });
+};
+
+var initAnimations = function initAnimations() {
+  $(document).ready(function () {
+    var animation_elements = $.find('.animation-element');
+    var web_window = $(window);
+
+    function check_if_in_view() {
+      var window_height = web_window.height();
+      var window_top_position = web_window.scrollTop();
+      var window_bottom_position = window_top_position + window_height;
+      $.each(animation_elements, function () {
+        var element = $(this);
+        var element_height = $(element).outerHeight();
+        var element_top_position = $(element).offset().top;
+        var element_bottom_position = element_top_position + element_height;
+        console.log('vals', element_bottom_position, window_top_position, element_top_position, window_bottom_position);
+
+        if (element_bottom_position >= window_top_position && element_top_position <= window_bottom_position) {
+          element.addClass('in-view');
         } else {
-          item.classList.remove("active");
+          element.removeClass('in-view');
         }
       });
-    };
+    }
 
-    var showStep = function showStep(stepIndex) {
-      var steps = document.querySelectorAll(".step-container fieldset");
-      steps.forEach(function (step, index) {
-        if (index === stepIndex) {
-          step.style.display = "block";
-        } else {
-          step.style.display = "none";
-        }
-      });
-    };
-
-    var nextStep = function nextStep() {
-      if (currentStep < progressListItems.length - 1) {
-        currentStep++;
-        showStep(currentStep);
-        updateProgress();
-      }
-    };
-
-    var prevStep = function prevStep() {
-      if (currentStep > 0) {
-        currentStep--;
-        showStep(currentStep);
-        updateProgress();
-      }
-    };
-
-    var nextStepButtons = document.querySelectorAll(".next-step");
-    var prevStepButtons = document.querySelectorAll(".previous-step");
-    nextStepButtons.forEach(function (button) {
-      button.addEventListener("click", nextStep);
+    $(window).on('scroll resize', function () {
+      check_if_in_view();
     });
-    prevStepButtons.forEach(function (button) {
-      button.addEventListener("click", prevStep);
-    });
+    $(window).trigger('scroll');
   });
 };

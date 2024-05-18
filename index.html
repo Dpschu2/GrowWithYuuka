@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="assets/css/mobiriseicons.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/form.css">
     <link rel="stylesheet" type="text/css" href="assets/scss/dist/styles.css">
 </head>
 
@@ -65,19 +63,20 @@
     <!-- MARK: HOME -->
     <span id="home-navLink" class="navLink"></span>
     <section class="home-bg section h-100vh" id="home" data-nav="home">
-        <div class="slider">
-            <ul class="items">
-                <li class="item current"><img src="/assets/img/homeSlides/deadlift.jpg"><span class="bg-overlay"></span>
-                    <h2>Personal Trainer.</h2>
-                </li>
-                <li class="item onDeck"><img src="/assets/img/homeSlides/stretch.jpg"><span class="bg-overlay"></span>
-                    <h2>Life Coach.</h2>
-                </li>
-                <li class="item last"><img src="/assets/img/homeSlides/program.jpg"><span class="bg-overlay"></span>
-                    <h2>Custom Programming.</h2>
-                </li>
-            </ul>
-        </div>
+        <ul id="home-slides">
+            <li class="slide slide-1 active">
+                <span class="bg-overlay"></span>
+                <h2>Personal Trainer.</h2>
+            </li>
+            <li class="slide slide-2">
+                <span class="bg-overlay"></span>
+                <h2>Life Coach.</h2>
+            </li>
+            <li class="slide slide-3">
+                <span class="bg-overlay"></span>
+                <h2>Custom Programming.</h2>
+            </li>
+        </ul>
         <div class="container z-index home-content">
             <div class="main-content row justify-content-center">
                 <div class="col-lg-12">
@@ -117,97 +116,17 @@
     <section class="section section-theme1" id="get-started" data-nav="get-started">
         <div class="container">
             <div class="row get-started-content justify-content-center">
-                <div class="col-md-5">
+                <div class="col-lg-5">
                     <div class="text-center mx-auto section-main-title animation-element slide-right">
                         <h2><span class="fw-bold ff-b">Welcome, lets start this journey!</span></h2>
                         <div class="main-title-border">
                             <i class="mdi mdi-asterisk"></i>
                         </div>
-                        <p class=" mx-auto mt-2">Thank you for your interest in growing with yuuka (me!). Fill out the coaching application below to get your journey started💫 Once submitted, we will be reaching out to you to set up next steps. If you have any questions, feel free to DM or email me <a href="mailto:grow.withyuuka@gmail.com"><b>grow.withyuuka@gmail.com</b></a></p>
+                        <p class="mx-auto mt-2">Thank you for your interest in growing with yuuka (me!). Fill out the coaching application to get your journey started💫 Once submitted, we will be reaching out to you to set up next steps. If you have any questions, feel free to DM or email me <a href="mailto:grow.withyuuka@gmail.com"><b>grow.withyuuka@gmail.com</b></a></p>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="signup-container animate-element slide-left">
-                        <div class="progress-container">
-                            <hr class="progress-bar-back" />
-                            <hr class="progress-bar-front" />
-                        </div>
-                        <div class="form-container">
-                            <div class="form" id="form-1">
-                                <h3>Full Name:</h3>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="firstName">First:</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="First">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lastName">Last:</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Last">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="form" id="form-2">
-                                <h3>Contact:</h3>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="phoneNumber">Phone Number:</label>
-                                        <input type="number" class="form-control" id="phoneNumber">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="emailAdd">Email Address:</label>
-                                        <input type="email" class="form-control" id="emailAdd">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="form" id="form-3">
-                                <h3>Address:</h3>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="country">Country:</label>
-                                        <input type="text" class="form-control" id="country">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="zipCode">Zip Code:</label>
-                                        <input type="number" class="form-control" id="zipCode">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="form" id="form-4">
-                                <h3>Birth:</h3>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="dateBirth">Date of Birth:</label>
-                                        <input type="date" class="form-control" id="dateBirth">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="placeBirth">Place of Birth:</label>
-                                        <input type="text" class="form-control" id="placeBirth">
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="form" id="form-5">
-                                <h3>Account:</h3>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="username">Username:</label>
-                                        <input type="text" class="form-control" id="username">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password:</label>
-                                        <input type="number" class="form-control" id="password">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <button class="btn btn-prev" id="prev">Back</button>
-                            <button class="btn btn-next" id="next">Next</button>
-                        </div>
-                    </div>
+                <div class="col-lg-7">
+                    <div id="regForm" class="py-8 px-4 signup-container animation-element slide-left" data-myform data-myform-config="{&quot;preview&quot;:&quot;form&quot;,&quot;lastChangeTime&quot;:0,&quot;theme&quot;:&quot;custom&quot;,&quot;themeType&quot;:&quot;custom&quot;,&quot;customTheme&quot;:{&quot;font-family&quot;:&quot;{\&quot;family\&quot;:\&quot;Barlow\&quot;,\&quot;subsets\&quot;:[\&quot;latin\&quot;,\&quot;latin-ext\&quot;,\&quot;vietnamese\&quot;],\&quot;variants\&quot;:[\&quot;100\&quot;,\&quot;100italic\&quot;,\&quot;200\&quot;,\&quot;200italic\&quot;,\&quot;300\&quot;,\&quot;300italic\&quot;,\&quot;regular\&quot;,\&quot;italic\&quot;,\&quot;500\&quot;,\&quot;500italic\&quot;,\&quot;600\&quot;,\&quot;600italic\&quot;,\&quot;700\&quot;,\&quot;700italic\&quot;,\&quot;800\&quot;,\&quot;800italic\&quot;,\&quot;900\&quot;,\&quot;900italic\&quot;]}&quot;,&quot;container-lh&quot;:1.5,&quot;container-bg-color&quot;:&quot;#ffffff00&quot;,&quot;container-width&quot;:&quot;580px&quot;,&quot;container-radius&quot;:&quot;6px&quot;,&quot;border-color&quot;:&quot;#ffffff00&quot;,&quot;text-color&quot;:&quot;#1e293b&quot;,&quot;link-color&quot;:&quot;#0f172a&quot;,&quot;error-color&quot;:&quot;#dc2626&quot;,&quot;btn-disabled-opacity&quot;:0.45,&quot;btn-primary-bg-color&quot;:&quot;#2F4A60&quot;,&quot;btn-primary-text-color&quot;:&quot;#fff&quot;,&quot;btn-font-size&quot;:&quot;16px&quot;,&quot;btn-primary-outline-color&quot;:&quot;#60a5fa&quot;,&quot;btn-primary-outline-opacity&quot;:&quot;0.45&quot;,&quot;btn-secondary-bg-color&quot;:&quot;#f0f0f1&quot;,&quot;btn-secondary-text-color&quot;:&quot;#333&quot;,&quot;title-size&quot;:&quot;24px&quot;,&quot;text-size&quot;:&quot;18px&quot;,&quot;control-bg-color&quot;:&quot;#ffffff21&quot;,&quot;control-radius&quot;:&quot;6px&quot;,&quot;control-outline-color&quot;:&quot;#3b82f67d&quot;,&quot;control-border-color&quot;:&quot;#d1d5db&quot;,&quot;control-border-focus-color&quot;:&quot;#3b82f6&quot;,&quot;control-radio-checked-bg-color&quot;:&quot;#3b82f6&quot;,&quot;control-error-bg-color&quot;:&quot;#fef2f2&quot;,&quot;control-error-border-color&quot;:&quot;#ef4444&quot;,&quot;control-error-text-color&quot;:&quot;#7f1d1d&quot;,&quot;control-group-bg-color&quot;:&quot;#ffffff00&quot;,&quot;control-group-radius&quot;:&quot;6px&quot;,&quot;control-group-padding&quot;:&quot;16px&quot;,&quot;control-group-b-margin&quot;:&quot;20px&quot;,&quot;control-label-b-margin&quot;:&quot;4px&quot;,&quot;control-label-fw&quot;:500},&quot;fields&quot;:[{&quot;id&quot;:&quot;1486830366&quot;,&quot;type&quot;:&quot;SHORT_ANSWER&quot;,&quot;label&quot;:&quot;First/Preferred Name&quot;,&quot;required&quot;:true,&quot;description&quot;:null},{&quot;type&quot;:&quot;SECTION&quot;,&quot;label&quot;:&quot;How can I help you grow🌟&quot;,&quot;description&quot;:null},{&quot;id&quot;:&quot;1447330797&quot;,&quot;type&quot;:&quot;CHECKBOX&quot;,&quot;label&quot;:null,&quot;options&quot;:[{&quot;label&quot;:&quot;Gain Muscle&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Lose Weight&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Gain Weight&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Gain Confidence&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Improve healthy habits&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Improve nutrition/ eating habits&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Accountability/ Consistency&quot;,&quot;custom&quot;:false}],&quot;required&quot;:true,&quot;description&quot;:null},{&quot;type&quot;:&quot;SECTION&quot;,&quot;label&quot;:null,&quot;description&quot;:null},{&quot;id&quot;:&quot;1225614236&quot;,&quot;type&quot;:&quot;RADIO&quot;,&quot;label&quot;:&quot;Gender:&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Female&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Male&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;&quot;,&quot;custom&quot;:true}],&quot;required&quot;:true,&quot;description&quot;:null},{&quot;id&quot;:&quot;358733618&quot;,&quot;type&quot;:&quot;RADIO&quot;,&quot;label&quot;:&quot;Age&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;under 18&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;18-25&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;25-35&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;35+&quot;,&quot;custom&quot;:false}],&quot;required&quot;:true,&quot;description&quot;:null},{&quot;id&quot;:&quot;1584871114&quot;,&quot;type&quot;:&quot;RADIO&quot;,&quot;label&quot;:&quot;Occupation&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Office/Corporate&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Student&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;Customer Service Industry (Server, Retail..)&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;&quot;,&quot;custom&quot;:true}],&quot;required&quot;:true,&quot;description&quot;:null},{&quot;type&quot;:&quot;SECTION&quot;,&quot;label&quot;:&quot;✨Goals✨&quot;,&quot;description&quot;:null},{&quot;id&quot;:&quot;319843415&quot;,&quot;type&quot;:&quot;SHORT_ANSWER&quot;,&quot;label&quot;:&quot;3 short term goals:&quot;,&quot;required&quot;:false,&quot;description&quot;:null},{&quot;id&quot;:&quot;233189499&quot;,&quot;type&quot;:&quot;SHORT_ANSWER&quot;,&quot;label&quot;:&quot;What's holding you back from achieving your goals? (e.g. recent events, accountability, knowledge)&quot;,&quot;required&quot;:true,&quot;description&quot;:null},{&quot;type&quot;:&quot;SECTION&quot;,&quot;label&quot;:&quot;Let's get started🌱&quot;,&quot;description&quot;:null},{&quot;id&quot;:&quot;996941872&quot;,&quot;type&quot;:&quot;RADIO&quot;,&quot;label&quot;:&quot;Are you ready to invest financially, mentally and physically to hit your goals?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Yes&quot;,&quot;custom&quot;:false},{&quot;label&quot;:&quot;No&quot;,&quot;custom&quot;:false}],&quot;required&quot;:true,&quot;description&quot;:null},{&quot;id&quot;:&quot;1285689872&quot;,&quot;type&quot;:&quot;DATE&quot;,&quot;label&quot;:&quot;When would you ideally like to start your new coaching program?&quot;,&quot;required&quot;:true,&quot;withTime&quot;:false,&quot;withYear&quot;:true,&quot;description&quot;:null}],&quot;settings&quot;:{&quot;form&quot;:{&quot;showBrandedLogo&quot;:true,&quot;submit&quot;:&quot;Submit&quot;},&quot;success&quot;:{&quot;type&quot;:&quot;page&quot;,&quot;redirectUrl&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;description&quot;:&quot;&quot;,&quot;isSubmitAnother&quot;:true,&quot;submitAnotherTitle&quot;:&quot;&quot;}},&quot;id&quot;:&quot;clwawpuaa001lwnwvw1nz57vs&quot;,&quot;googleFormId&quot;:&quot;e/1FAIpQLSd5wYkRG-mp23xYwqM_q5c0ztlju563Kh_6jbbvaw0KlZ4AkQ&quot;,&quot;title&quot;:&quot;GWY 1:1 Online Coaching&quot;,&quot;description&quot;:&quot;&quot;,&quot;userId&quot;:&quot;clwawn2dm001dwnwvrjldxmdr&quot;,&quot;createdAt&quot;:&quot;2024-05-17T16:41:35.890Z&quot;,&quot;updatedAt&quot;:&quot;2024-05-17T16:41:35.890Z&quot;}"></div>
                 </div>
             </div>
         </div>
@@ -493,7 +412,7 @@
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/signup.js"></script>
+    <script src="assets/js/customForm.js"></script>
     <script src="assets/js/global.js"></script>
 </body>
 

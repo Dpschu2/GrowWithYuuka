@@ -1,0 +1,130 @@
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.animation-element {
+    &.slide-down {
+        position: relative;
+        top: -100px;
+        opacity: 0.3;
+        transition: 1.5s ease;
+
+        &.in-view {
+          animation: slideDown 1.5s ease forwards;
+          opacity: 1;
+        }
+
+        @keyframes slideDown {
+          from {
+            top: -100px;
+          }
+          to {
+            top: 0;
+          }
+        }
+    }
+    &.slide-up {
+        position: relative;
+        bottom: -100px;
+        opacity: 0.3;
+        transition: 1.5s ease;
+
+        &.in-view {
+          animation: slideUp 1.5s ease forwards;
+          opacity: 1;
+        }
+
+        @keyframes slideUp {
+          from {
+            bottom: -100px;
+          }
+          to {
+            bottom: 0;
+          }
+        }
+    }
+    &.slide-left {
+        position: relative;
+        right: -100px;
+        opacity: 0.3;
+        transition: 1.5s ease;
+
+        &.in-view {
+          animation: slideLeft 1.5s ease forwards;
+          opacity: 1;
+        }
+
+        @keyframes slideLeft {
+          from {
+            right: -100px;
+          }
+          to {
+            right: 0;
+          }
+        }
+    }
+    &.slide-right {
+        position: relative;
+        left: -100px;
+        opacity: 0.3;
+        transition: 1.5s ease;
+
+        &.in-view {
+          animation: slideRight 1.5s ease forwards;
+          opacity: 1;
+        }
+
+        @keyframes slideRight {
+          from {
+            left: -100px;
+          }
+          to {
+            left: 0;
+          }
+        }
+    }
+}

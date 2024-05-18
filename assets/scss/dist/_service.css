@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Chido";
+  src: url("/assets/fonts/chido.otf") format("opentype");
+}
+.lan_box_ser {
+  border-radius: 30px !important;
+  box-shadow: 15px 26px 60px 0 rgba(0, 0, 0, 0.06);
+}
+.lan_box_ser .ser_icon i {
+  font-size: 42px;
+}

@@ -1,4 +1,4 @@
-
+@use 'variables';
 .footer {
     .footer-container {
         @media(min-width: 800px) {
@@ -15,7 +15,7 @@
 } 
 .fot_social {
     .social-icon {
-        border: 2px solid $black;
+        border: 2px solid variables.$black;
         border-radius: 50%;
         transition: 0.3s ease;
         width: 42px;
@@ -29,16 +29,16 @@
         text-align: center;
         
         &:hover {
-            color: $white;
-            background-color: $black;
+            color: variables.$white;
+            background-color: variables.$black;
             
             .mdi {
-                fill: $white;
+                fill: variables.$white;
             }
         }
         .mdi {
             transition: 0.3s ease;
-            fill: $black;
+            fill: variables.$black;
         }
         .tiktok-icon {
             transform: scale(0.8);
@@ -61,10 +61,10 @@
     }
     .dean {
         transition: 0.2s ease;
-        color: $darkblue;
+        color: variables.$darkblue;
 
         &:hover {
-            color: $darktext !important;
+            color: variables.$darktext !important;
             font-weight: 500;
         }
     }

@@ -1,3 +1,4 @@
+@use 'variables';
 .btn {
     padding: 12px 26px;
 }
@@ -54,11 +55,11 @@
 }
 
 .btn-custom {
-    background-color: $darkblue;
-    border: 2px solid $darkblue;
-    color: $lightestblue !important;
+    background-color: variables.$darkblue;
+    border: 2px solid variables.$darkblue;
+    color: variables.$lightestblue !important;
     transition: all 0.5s;
-    font-family: $bodyFont;
+    font-family: variables.$bodyFont;
     font-size: 16px;
     border-radius: 46px;
     text-transform: capitalize;
@@ -78,7 +79,7 @@
 .btn-custom:focus,
 .btn-custom:hover,
 .open>.dropdown-toggle.btn-custom {
-    background-color: $darktext;
-    border-color: $darkblue;
-    color: $darkblue;
+    background-color: variables.$darktext;
+    border-color: variables.$darkblue;
+    color: variables.$darkblue;
 }

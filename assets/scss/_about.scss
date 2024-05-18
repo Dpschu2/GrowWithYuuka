@@ -1,9 +1,9 @@
-
+@use 'variables';
 #about {
     padding: 100px 0;
     
     .video-container {
-        display: flex;
+        display: flex; 
         align-items: center;
         justify-content: center;
 

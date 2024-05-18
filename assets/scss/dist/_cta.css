@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Chido";
+  src: url("/assets/fonts/chido.otf") format("opentype");
+}
+.bg-cta {
+  position: relative;
+  background-image: url(/assets/img/nutrition2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+}
+.bg-cta .bg-overlay:after {
+  background: rgba(0, 0, 0, 0.5);
+}
+.bg-cta .btn {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Chido";
+}

@@ -1,3 +1,4 @@
+@use 'variables';
 .custom-nav {
     padding: 8px 0px;
     width: 100%;
@@ -11,31 +12,31 @@
         .navbar-nav {
             li {
                 a {
-                    color: $lighterblue;
+                    color: variables.$lighterblue;
                 }
             }
         }
-    }
+    } 
     &.stickyadd, &:has(.navbar-toggler[aria-expanded="true"]) {
-        background-color: rgba($darktext, 0.6); 
+        background-color: rgba(variables.$darktext, 0.6); 
         padding: 8px 0;
-        box-shadow: 0px 0px 18px 1px rgba($white, 0.1);
+        box-shadow: 0px 0px 18px 1px rgba(variables.$white, 0.1);
         backdrop-filter: saturate(180%) blur(10px);
         box-shadow: 0px 3px 14px 4px rgba(0,0,0,0.11);
 
         .navbar-nav {
             li {
                 a {
-                    color: $white;
+                    color: variables.$white;
                     text-align: center;
                     
                     &:before {
-                        background: $white !important;
+                        background: variables.$white !important;
                     } 
                 }
                 &.active {
                     a {
-                        color: $white;
+                        color: variables.$white;
                         font-weight: bold;
                     }
                 }
@@ -45,20 +46,20 @@
     .navbar-nav {
         li { 
             a {
-                color: $white;
+                color: variables.$white;
                 background-color: transparent !important;
                 padding: 15px 0;
                 position: relative;
                 margin: 0 7px;
                 font-weight: 600;
                 transition: all 0.4s ease;
-                font-family: $headingFont;
-                font-size: 16px;
+                font-family: variables.$headingFont;
                 text-align: center;
+                font-size: 20px;
             }
             &.active {
                 a {
-                    color: $white;
+                    color: variables.$white;
                     font-weight: bold;
                 }
             }
@@ -148,7 +149,7 @@
 .stickyadd {
     .logo-link { 
         .logo {
-            fill: $lighterblue;
+            fill: variables.$lighterblue;
         }
     }
 }

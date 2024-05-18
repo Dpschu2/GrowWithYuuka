@@ -1,3 +1,4 @@
+@use 'variables';
 .home-bg {
     display: flex;
     justify-content: space-between;
@@ -93,164 +94,6 @@
         }
     }
 }
-.slider {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-
-    .items {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        background-color: #48494a8b;
-
-        .item {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          transition: all 2s ease;
-          
-          h2 {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            font-size: 8vw;
-            font-weight: 400;
-            text-transform: capitalize;
-            text-rendering: optimizeLegibility;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
-            container-name: mainTitle;
-            line-height: 1.1;
-            color: #ffffff;
-            // z-index: 2;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            top: 84px;
-            height: calc(100dvh - 302px);
-
-            @media(min-width: 768px) {
-                font-size: 45px;
-            }
-            @media(min-width: 981px) {
-                font-size: 4em;
-            }
-            @media(min-width: 1300px) {
-                font-size: 6em;
-            }
-          }
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: all 2s ease-in-out;
-            // z-index: 0;
-          }
-          &.last {
-            animation: fadeOut 2s ease;
-            animation-fill-mode: forwards;
-
-            h2 {
-                animation: fadeOutH 2s ease;
-                animation-fill-mode: forwards;
-            }
-          }
-          &.current {
-            // animation: fadeIn 2s ease;
-            opacity: 1;
-            animation-fill-mode: forwards;
-            order: 2;
-
-            h2 {
-                animation: fadeInH 2s ease;
-                animation-fill-mode: forwards;
-            }
-            img {
-                opacity: 1;                
-            }
-          }
-          &.onDeck {
-            // z-index: 1;
-            opacity: 0;
-            order: 1;
-          }
-        }
-    }
-}
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        // z-index: 1;
-    }
-    //   50% { opacity: 1; z-index: 2; }
-    100% {
-        opacity: 1;
-        // z-index: 2;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        // z-index: 2;
-    }
-    //   50% { opacity: 1; z-index: 1; }
-    100% {
-        opacity: 0;
-        // z-index: 0;
-    }
-}
-@keyframes fadeInH {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@keyframes fadeOutH {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 0; }
-}
-.slider .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.slider .slide:nth-child(1) {
-   background-image: url('/assets/img/homeSlides/deadlift.jpg');
-}
-
-.slider .slide:nth-child(2) {
-   background-image: url('/assets/img/homeSlides/program.jpg');
-}
-
-.slider .slide:nth-child(3) {
-   background-image: url('/assets/img/homeSlides/skyline.jpg');
-}
-
-.home-table-center {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.home-table {
-    display: table;
-    width: 100%;
-    height: 100%;
-}
 
 .header_title {
     font-size: 8vw;
@@ -281,3 +124,67 @@
     font-size: 18px;
     max-width: 600px;
 }
+
+#home-slides{
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    list-style-type: none;
+    height: 100dvh; 
+    width: 100vw;  
+    
+    .slide {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      background-size: cover;
+      background-position: 50% 60%;
+      background-attachment: fixed;
+
+      &.active { 
+        opacity: 1;
+
+        h2 {
+            opacity: 1;
+        }
+      }
+      h2 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 8vw;
+            font-weight: 400;
+            text-transform: capitalize;
+            text-rendering: optimizeLegibility;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            container-name: mainTitle;
+            line-height: 1.1;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            top: 84px;
+            height: calc(100dvh - 302px);
+
+            @media(min-width: 768px) {
+                font-size: 45px;
+            }
+            @media(min-width: 981px) {
+                font-size: 4em;
+            }
+            @media(min-width: 1300px) {
+                font-size: 6em;
+            }
+        }
+    }
+    .slide-1 { background-image: url('/assets/img/homeSlides/deadlift.jpg'); }
+    .slide-2 { background-image: url('/assets/img/homeSlides/stretch.jpg'); }
+    .slide-3 { background-image: url('/assets/img/homeSlides/program.jpg'); }
+} 
+
+  

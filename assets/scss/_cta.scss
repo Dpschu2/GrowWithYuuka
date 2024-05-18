@@ -1,3 +1,4 @@
+@use 'variables';
 // cta scssṭ
 
 .bg-cta {
@@ -16,6 +17,6 @@
     .btn {
         font-size: 20px;
         font-weight: 500;
-        font-family: $headingFont;
+        font-family: variables.$headingFont;
     }
 } 

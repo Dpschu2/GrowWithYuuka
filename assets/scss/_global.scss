@@ -1,9 +1,10 @@
+@use 'variables';
 html {
-    background-color: $lightblue;
+    background-color: variables.$lightblue;
 } 
 body {
-  font-family: $bodyFont;
-  background-color: $lightblue;
+  font-family: variables.$bodyFont;
+  background-color: variables.$lightblue;
   overflow-x: hidden;
 }
 
@@ -13,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $headingFont;
+    font-family: variables.$headingFont;
 }
 
 h1.fw-bold,
@@ -25,7 +26,7 @@ h6.fw-bold {
     font-weight: 600 !important;
 }
 .fw-bold {
-    font-family: $headingFont;
+    font-family: variables.$headingFont;
 }
 
 a,
@@ -150,8 +151,8 @@ button:focus {
         bottom: 110%;
         right: 0;
         font-size: 12px;
-        color: $white;
-        font-family: $headingFont;
+        color: variables.$white;
+        font-family: variables.$headingFont;
         font-weight: bold;
         width: 97px;
         padding: 7px 4px 3px;
@@ -177,40 +178,44 @@ button:focus {
     }
 } 
 
-.section {
+.section { 
     padding-top: 100px;
     padding-bottom: 100px;
     position: relative;
     background-color: #fff;
 
+    @media(max-width: 991px) {
+        padding-top: 50px;
+        padding-bottom: 80px;
+    }
     &.section-theme4 {
-        background-color: $lightestblue !important;
+        background-color: variables.$lightestblue !important;
         
         * {
-            color: $darkblue;
+            color: variables.$darkblue;
         }
     }
     &.section-theme3 {
-        background-color: $lighterblue !important;
+        background-color: variables.$lighterblue !important;
         
         * {
-            color: $darktext;
+            color: variables.$darktext;
         }
     }
     &.section-theme2 {
-        background-color: $lightblue !important;
+        background-color: variables.$lightblue !important;
         
         * {
-            color: $darktext;
+            color: variables.$darktext;
         }
     }
     &.section-theme1 {
-        // background-color: $lighterblue !important;
+        // background-color: variables.$lighterblue !important;
         background: linear-gradient(135deg, #1abc9c 0%, #50b1f8 100%);
         
         * {
-            // color: $darktext !important;
-            color: $lighterblue;
+            // color: variables.$darktext !important;
+            color: variables.$lighterblue;
         }
     }
 } 
@@ -262,11 +267,11 @@ button:focus {
     background-color: #000;
 }
 .headerFont {
-    font-family: $headingFont !important;
+    font-family: variables.$headingFont !important;
 }
 .section-main-title {
     max-width: 720px;
-    font-size: 18px;
+    font-size: 20px;
 
     h2 {
         font-size: 40px;
@@ -339,7 +344,7 @@ button:focus {
             text-align: center;
 
 			.mdi {
-				fill: $white;
+				fill: variables.$white;
                 width: 100%;
                 height: 99%;
                 font-size: 47px; 
@@ -364,135 +369,5 @@ button:focus {
 	}
 } 
 .ff-b {
-    font-family: $bodyFont;
-}
-@-webkit-keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  25% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  60% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  100% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-
-@keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  25% {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-  }
-
-  60% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  100% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-
-.animation-element {
-    &.slide-down {
-        position: relative;
-        top: -100px;
-        opacity: 0.3;
-        transition: 1.5s ease;
-
-        &.in-view {
-          animation: slideDown 1.5s ease forwards;
-          opacity: 1;
-        }
-
-        @keyframes slideDown {
-          from {
-            top: -100px;
-          }
-          to {
-            top: 0;
-          }
-        }
-    }
-    &.slide-up {
-        position: relative;
-        bottom: -100px;
-        opacity: 0.3;
-        transition: 1.5s ease;
-
-        &.in-view {
-          animation: slideUp 1.5s ease forwards;
-          opacity: 1;
-        }
-
-        @keyframes slideUp {
-          from {
-            bottom: -100px;
-          }
-          to {
-            bottom: 0;
-          }
-        }
-    }
-    &.slide-left {
-        position: relative;
-        right: -100px;
-        opacity: 0.3;
-        transition: 1.5s ease;
-
-        &.in-view {
-          animation: slideLeft 1.5s ease forwards;
-          opacity: 1;
-        }
-
-        @keyframes slideLeft {
-          from {
-            right: -100px;
-          }
-          to {
-            right: 0;
-          }
-        }
-    }
-    &.slide-right {
-        position: relative;
-        left: -100px;
-        opacity: 0.3;
-        transition: 1.5s ease;
-
-        &.in-view {
-          animation: slideRight 1.5s ease forwards;
-          opacity: 1;
-        }
-
-        @keyframes slideRight {
-          from {
-            left: -100px;
-          }
-          to {
-            left: 0;
-          }
-        }
-    }
+    font-family: variables.$bodyFont;
 }

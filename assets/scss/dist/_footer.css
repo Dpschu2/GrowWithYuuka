@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Chido";
+  src: url("/assets/fonts/chido.otf") format("opentype");
+}
+@media (min-width: 800px) {
+  .footer .footer-container {
+    margin: 0 40px;
+  }
+}
+.footer .footer-container .footer-content {
+  flex-direction: column-reverse;
+}
+@media (min-width: 800px) {
+  .footer .footer-container .footer-content {
+    flex-direction: row;
+  }
+}
+
+.fot_social .social-icon {
+  border: 2px solid #000000;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 38px;
+  text-align: center;
+}
+.fot_social .social-icon:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+.fot_social .social-icon:hover .mdi {
+  fill: #FFFFFF;
+}
+.fot_social .social-icon .mdi {
+  transition: 0.3s ease;
+  fill: #000000;
+}
+.fot_social .social-icon .tiktok-icon {
+  transform: scale(0.8);
+}
+
+.copy-rights {
+  line-height: 43px;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .copy-rights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.9;
+  }
+}
+@media (min-width: 800px) {
+  .copy-rights {
+    text-align: left;
+  }
+}
+.copy-rights .dean {
+  transition: 0.2s ease;
+  color: #2F4A60;
+}
+.copy-rights .dean:hover {
+  color: #00294a !important;
+  font-weight: 500;
+}
