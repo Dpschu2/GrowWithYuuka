@@ -2,9 +2,15 @@ let interval = setInterval(() => {
     const $cgfContainer = $('.cgf__title');
     if ($cgfContainer.length) {
         $cgfContainer.after(`<progress id="form-progress" value="0" max="5"> 0% </progress>`);
+        $('#regForm input[type=text]').on('keypress', function(e) {
+            if (e.key === 'Enter') {
+                $('#regForm .cgf__actions button:last-child').click();
+            }
+        })
         clearInterval(interval);
     }
 }, 300);
+
 
 !function() {
     "use strict";

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Chido";
+  src: url("/assets/fonts/chido.otf") format("opentype");
+}
+.spotify-container {
+  position: fixed;
+  bottom: 0;
+  right: -450px;
+  transition: 0.3s ease;
+  max-width: calc(100% - 63px);
+  width: 450px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  z-index: 48;
+  height: 80%;
+}
+.spotify-container.is-open {
+  right: -5px;
+}
+.spotify-container .spotify-toggle {
+  padding: 14px 8px 12px 15px;
+  background: #18382F;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 100%;
+  top: 40px;
+  cursor: pointer;
+}
+.spotify-container .spotify-toggle svg {
+  width: 40px;
+  height: 40px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.spotify-container .spotify-toggle:hover svg {
+  transform: scale(1.1);
+}
