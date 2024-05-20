@@ -121,7 +121,7 @@
 }
 #regForm.signup-container input[type=text] {
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   color: #2F4A60 !important;
   border: none;
   outline: none !important;
@@ -130,12 +130,12 @@
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.03);
   font-weight: 500;
-  padding: 14px 30px;
+  padding: 9px 18px;
 }
 @media (max-width: 767px) {
   #regForm.signup-container input[type=text] {
-    font-size: 18px;
-    padding: 8px 25px;
+    font-size: 16px;
+    padding: 7px 18px;
   }
 }
 #regForm.signup-container input[type=text]:placeholder {
@@ -196,10 +196,14 @@
 #regForm.signup-container .cgf__radio-item {
   padding-right: 10px;
 }
+#regForm.signup-container input {
+  cursor: pointer;
+}
 #regForm.signup-container input:-webkit-autofill, #regForm.signup-container input:-webkit-autofill:hover, #regForm.signup-container input:-webkit-autofill:focus, #regForm.signup-container input:-webkit-autofill:active {
-  -webkit-box-shadow: none !important;
-  background-color: transparent !important;
-  background: none !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+#regForm.signup-container .cgf__textarea {
+  color: #2F4A60;
 }
 
 /*! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com*/
@@ -525,8 +529,9 @@
 
 .cgf-theme-base .cgf__title {
   font-size: var(--cgf-title-size);
+  font-family: "Chido";
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 5px;
   margin-top: 0;
 }
 
@@ -729,6 +734,7 @@
   height: 1rem;
   margin: 0;
   width: 1rem;
+  min-width: 1rem !important;
 }
 
 .cgf-theme-base .cgf__radio:focus {
@@ -949,6 +955,7 @@
   margin-top: 0.25rem;
   opacity: 0.7;
   margin-left: 30px;
+  font-size: 16px;
 }
 
 .cgf-theme-base .cgf__copy {

@@ -23,6 +23,21 @@
         }
     }
 }
+.contact-caption {
+    width: 460px;
+    max-width: 100%;
+}
+.about-img-container {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.about-content {
+    .about-text {
+        text-align: left;
+    }
+}
 .about-detail {
     max-width: 850px;
     .about-work {
