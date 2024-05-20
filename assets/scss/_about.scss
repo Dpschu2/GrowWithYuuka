@@ -31,13 +31,7 @@
 }
 .read-more-text {
     display: none;
-    overflow: hidden;
-    max-height: 0;
 
-    &.shown {
-        max-height: 500px;
-    }
-}
 .contact-caption {
     width: 460px;
     max-width: 100%;
