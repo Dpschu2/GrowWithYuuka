@@ -4,7 +4,14 @@ $(document).ready(() => {
     initAnimations();
     initCoachingForm();
     spotifyToggle();
+    initReadMore()
 });
+const initReadMore = () => {
+    $('.read-more').on('click', () => {
+        $('.read-more-text').show();
+        $('.read-more').hide();
+    });
+}
 const spotifyToggle = () => {
     $('.spotify-toggle').on('click', function () {
         $('.spotify-container').toggleClass('is-open');

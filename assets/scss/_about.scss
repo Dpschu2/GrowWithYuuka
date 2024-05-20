@@ -23,6 +23,15 @@
         }
     }
 }
+.read-more {
+    margin-top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+.read-more-text {
+    display: none;
+}
 .contact-caption {
     width: 460px;
     max-width: 100%;
@@ -36,6 +45,7 @@
 .about-content {
     .about-text {
         text-align: left;
+        position: relative;
     }
 }
 .about-detail {

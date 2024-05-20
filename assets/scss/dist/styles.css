@@ -395,6 +395,17 @@
   }
 }
 
+.read-more {
+  margin-top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+.read-more-text {
+  display: none;
+}
+
 .contact-caption {
   width: 460px;
   max-width: 100%;
@@ -407,6 +418,7 @@
 
 .about-content .about-text {
   text-align: left;
+  position: relative;
 }
 
 .about-detail {
@@ -530,6 +542,11 @@
 @media (max-width: 1500px) {
   .footer .footer-container {
     margin-right: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .footer .footer-container {
+    margin-right: 0;
   }
 }
 .footer .footer-container .footer-content {
@@ -822,6 +839,16 @@
 .services-container .services-row.row-1 {
   flex-direction: row-reverse;
 }
+@media (max-width: 767px) {
+  .services-container .services-row.row-1 {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  .services-container .services-row.row-2 {
+    margin: 0;
+  }
+}
 .services-container .services-row.row-2 .services-content {
   display: inline-flex;
   flex-direction: column;
@@ -830,10 +857,20 @@
   z-index: 1;
   position: relative;
 }
+@media (max-width: 767px) {
+  .services-container .services-row.row-2 .services-content {
+    align-items: flex-start;
+  }
+}
 .services-container .services-row.row-2 .services-content ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .services-container .services-row.row-2 .services-content ul {
+    align-items: flex-start;
+  }
 }
 .services-container .services-row.row-2 .services-content ul li {
   text-align: right;
@@ -851,10 +888,14 @@
 .services-container .services-row .image-col .image-container {
   position: relative;
 }
+.services-container .services-row .image-col .image-container .service-blob {
+  width: 100%;
+}
 .services-container .services-row .image-col .image-container .service-img {
   position: absolute;
   top: 45px;
   left: -30px;
+  width: 97%;
 }
 .services-container .services-row .services-content {
   z-index: 1;
@@ -871,7 +912,6 @@
 }
 .services-container .services-row .services-content ul li {
   list-style-type: none;
-  display: inline-flex;
   font-size: 18px;
   line-height: 1.8;
 }
@@ -2129,7 +2169,6 @@ button:focus {
     height: 42px;
   }
 }
-
 ::selection {
   background: rgba(166, 175, 189, 0.3);
 }

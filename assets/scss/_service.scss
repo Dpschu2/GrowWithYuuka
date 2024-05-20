@@ -12,8 +12,15 @@
         }
         &.row-1 {
             flex-direction: row-reverse;
+
+            @media(max-width: 767px) {
+                margin-bottom: 0;
+            }
         }
         &.row-2 {
+            @media(max-width: 767px) {
+                margin: 0;
+            }
             .services-content {
                 display: inline-flex;
                 flex-direction: column;
@@ -22,13 +29,20 @@
                 z-index: 1;
                 position: relative;
 
+                @media(max-width: 767px) {
+                    align-items: flex-start;
+                }
                 ul {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: flex-end;
 
+                    @media(max-width: 767px) {
+                        align-items: flex-start;
+                    }
                     li {
-                        text-align: right;;
+                        text-align: right;
+
                         a {
                             text-align: right;
                         }
@@ -50,12 +64,13 @@
                 position: relative;
 
                 .service-blob {
-
+                    width: 100%;
                 }
                 .service-img {
                     position: absolute;
                     top: 45px;
                     left: -30px;
+                    width: 97%;
                 }
             }
         }
@@ -74,7 +89,6 @@
 
                 li {
                     list-style-type: none;
-                    display: inline-flex;
                     font-size: 18px;
                     line-height: 1.8;
 

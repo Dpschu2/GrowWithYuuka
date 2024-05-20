@@ -63,6 +63,9 @@ button:focus {
     @media(max-width: 767px) {
         height: 42px;
     }
+    &.secondary {
+        
+    }
 }
 ::selection {
     background: rgba(166, 175, 189, 0.3);

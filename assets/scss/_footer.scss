@@ -7,6 +7,9 @@
         @media(max-width: 1500px) {
             margin-right: 70px;
         }
+        @media(max-width: 767px) {
+            margin-right: 0;
+        }
         .footer-content {
             flex-direction: column-reverse;
 
