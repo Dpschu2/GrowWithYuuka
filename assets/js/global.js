@@ -299,7 +299,7 @@ const initCoachingForm = () => {
         "createdAt": new Date().getTime(),
         "updatedAt": new Date().getTime()
     };
-
+  
     var e, t, r, n, o, i, a, s, u = {},
         l = [],
         c = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,
