@@ -1,5 +1,7 @@
 @use 'variables';
 #get-started {
+    overflow: hidden;
+
     a {
         &:hover {
             color: variables.$lightblue;
@@ -28,6 +30,9 @@
         &>.col-lg-7 {
             @media(max-width: 991px) {
                 padding: 0 20px;
+            }
+            @media(min-width: 1400px) {
+                padding-left: 50px;
             }
         }
     }
@@ -78,7 +83,7 @@
         padding-left: 20px;
         background: variables.$headerbg;
         border-radius: 20px;
-        box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.3);
         clip-path: inset(0 -120% 0 0);
         overflow: hidden;
         transition: 0.5s ease;
@@ -138,6 +143,10 @@
         font-weight: 500;
         padding: 14px 30px;
 
+        @media(max-width: 767px) {
+            font-size: 18px;
+            padding: 8px 25px;
+        }
         &:placeholder {
             color: variables.$lighterblue;
         }
@@ -188,6 +197,9 @@
         &:disabled {
             opacity: 0.5;
         }
+        @media(max-width: 767px) {
+            height: 42px;
+        }
     }
     .cgf__actions:has(.cgf__btn:nth-child(2)) {
         .cgf__btn:first-child {
@@ -197,6 +209,14 @@
     }
     .cgf__radio-item {
         padding-right: 10px;
+    }
+    input {
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+        }
     }
 }
 
@@ -573,14 +593,16 @@
     font-weight: var(--cgf-control-label-fw);
     margin-bottom: var(--cgf-control-label-b-margin)
 }
+input:-internal-autofill-selected {
 
+}
 .cgf-theme-base .cgf__control {
     --tw-shadow: 0 1px 2px 0 #0000000d;
     --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--cgf-control-bg-color);
+    background-color: rgba(255, 255, 255, 0.2) !important;
     border-radius: var(--cgf-control-radius);
     border-style: solid;
     border-width: 1px;
@@ -601,7 +623,7 @@
     transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
     transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
-    width: 100%
+    width: 100%;
 }
 
 .cgf-theme-base .cgf__control[type=date] {
@@ -720,7 +742,7 @@
 .cgf-theme-base .cgf__radio-item {
     align-items: center;
     display: flex;
-    margin-bottom: .5rem
+    margin-bottom: .5rem;
 }
 
 .cgf-theme-base .cgf__radio {
@@ -731,12 +753,13 @@
     color: inherit;
     height: 1rem;
     margin: 0;
-    width: 1rem
+    width: 1rem;
+    min-width: 1rem;
 }
 
 .cgf-theme-base .cgf__radio:focus {
     outline: 2px solid #0000;
-    outline-offset: 2px
+    outline-offset: 2px;
 }
 
 .cgf-theme-base .cgf__radio {

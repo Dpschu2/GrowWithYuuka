@@ -184,6 +184,7 @@ button:focus {
   padding-bottom: 100px;
   position: relative;
   background-color: #fff;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   .section {
@@ -293,9 +294,13 @@ button:focus {
 }
 
 .main-title-border i {
-  font-size: 20px;
+  font-size: 24px;
+  padding: 0 5px;
 }
-
+.main-title-border i:before {
+  position: relative;
+  top: 2px;
+}
 .bg-overlay-gredient {
   background: linear-gradient(32deg, rgba(18, 166, 181, 0.8) 0%, rgba(16, 12, 242, 0.7) 100%);
   position: absolute;

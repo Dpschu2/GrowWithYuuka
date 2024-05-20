@@ -134,9 +134,24 @@
   fill: #daeeff;
 }
 
-.custom-nav .navbar-brand.logo {
+.custom-nav .navbar-brand {
+  position: relative;
+}
+.custom-nav .navbar-brand .logo {
   padding: 0;
 }
-.custom-nav .navbar-brand.logo img {
+.custom-nav .navbar-brand .logo img {
   height: 40px;
+}
+.custom-nav .navbar-brand .sprout-icon {
+  transition: 1s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  position: absolute;
+  bottom: 78%;
+  right: 56%;
+  width: 0;
+  height: 0;
+}
+.custom-nav.stickyAdd .navbar-brand .sprout-icon {
+  width: 15px;
+  height: 15px;
 }

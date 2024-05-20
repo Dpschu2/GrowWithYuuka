@@ -5,8 +5,8 @@
 
 
   GWY.prototype.initPreLoader = function () {
-    $('#status').fadeOut();
-    $('#preloader').delay(350).fadeOut('slow');
+    $('#status').hide();
+    $('#preloader').delay(350).hide();
     $('body').delay(350).css({
       'overflow': 'visible'
     });
@@ -35,103 +35,13 @@
     $("#navbarCollapse").scrollspy({
       offset: 20
     });
-  }, //Funfacts
-  GWY.prototype.initFunFacts = function () {
-    var a = 0;
-    $(window).on('scroll', function () {
-      var oTop = $('#counter').offset().top - window.innerHeight;
-
-      if (a == 0 && $(window).scrollTop() > oTop) {
-        $('.lan_fun_value').each(function () {
-          var $this = $(this),
-              countTo = $this.attr('data-count');
-          $({
-            countNum: $this.text()
-          }).animate({
-            countNum: countTo
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function step() {
-              $this.text(Math.floor(this.countNum));
-            },
-            complete: function complete() {
-              $this.text(this.countNum); //alert('finished');
-            }
-          });
-        });
-        a = 1;
-      }
-    });
-  }, //Portfolio Filter
-  GWY.prototype.initPortfolioFilter = function () {
-    $(window).on('load', function () {
-      var $container = $('.work-filter');
-      var $filter = $('#menu-filter');
-      $container.isotope({
-        filter: '*',
-        layoutMode: 'masonry',
-        animationOptions: {
-          duration: 750,
-          easing: 'linear'
-        }
-      });
-      $filter.find('a').on("click", function () {
-        var selector = $(this).attr('data-filter');
-        $filter.find('a').removeClass('active');
-        $(this).addClass('active');
-        $container.isotope({
-          filter: selector,
-          animationOptions: {
-            animationDuration: 750,
-            easing: 'linear',
-            queue: false
-          }
-        });
-        return false;
-      });
-    });
-  }, //Magnificpop
-  GWY.prototype.initMfpImages = function () {
-    $('.img-zoom').magnificPopup({
-      type: 'image',
-      closeOnContentClick: true,
-      mainClass: 'mfp-fade',
-      gallery: {
-        enabled: true,
-        navigateByImgClick: true,
-        preload: [0, 1]
-      }
-    });
-  }, //ClientSlider
-  // GWY.prototype.initClientSlider = function() {
-  //     $("#owl-demo").owlCarousel({
-  //         autoPlay: 7000,
-  //         stopOnHover: true,
-  //         navigation: false,
-  //         paginationSpeed: 1000,
-  //         goToFirstSpeed: 2000,
-  //         singleItem: true,
-  //         autoHeight: true,
-  //     });
-  // },
-  //MfpVideo
-  GWY.prototype.initMfpVideo = function () {
-    $('.blog_play').magnificPopup({
-      disableOn: 700,
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false
-    });
   }, //Back To Top
   GWY.prototype.initBackToTop = function () {
     $(window).on('scroll', function () {
       if ($(this).scrollTop() > 100) {
-        $('.back_top').fadeIn();
+        $('.back_top').addClass('show');
       } else {
-        $('.back_top').fadeOut();
+        $('.back_top').removeClass('show');
       }
     });
     $('.back_top').click(function () {
@@ -154,11 +64,6 @@
     this.initNavbarStickey();
     this.initNavbarSmooth();
     this.initNavbarScrollSpy();
-    this.initFunFacts();
-    this.initPortfolioFilter();
-    this.initMfpImages(); // this.initClientSlider();
-
-    this.initMfpVideo();
     this.initBackToTop();
     this.initTypedText();
   }, $.GWY = new GWY(), $.GWY.Constructor = GWY;

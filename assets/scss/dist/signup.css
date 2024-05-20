@@ -2,6 +2,9 @@
   font-family: "Chido";
   src: url("/assets/fonts/chido.otf") format("opentype");
 }
+#get-started {
+  overflow: hidden;
+}
 #get-started a:hover {
   color: #C1E0ff;
 }
@@ -25,6 +28,11 @@
 @media (max-width: 991px) {
   #get-started .get-started-content > .col-lg-7 {
     padding: 0 20px;
+  }
+}
+@media (min-width: 1400px) {
+  #get-started .get-started-content > .col-lg-7 {
+    padding-left: 50px;
   }
 }
 
@@ -71,7 +79,7 @@
   padding-left: 20px;
   background: #4BB8ED;
   border-radius: 20px;
-  box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.3);
   clip-path: inset(0 -120% 0 0);
   overflow: hidden;
   transition: 0.5s ease;
@@ -124,6 +132,12 @@
   font-weight: 500;
   padding: 14px 30px;
 }
+@media (max-width: 767px) {
+  #regForm.signup-container input[type=text] {
+    font-size: 18px;
+    padding: 8px 25px;
+  }
+}
 #regForm.signup-container input[type=text]:placeholder {
   color: #daeeff;
 }
@@ -170,12 +184,22 @@
 #regForm.signup-container .cgf__btn:disabled {
   opacity: 0.5;
 }
+@media (max-width: 767px) {
+  #regForm.signup-container .cgf__btn {
+    height: 42px;
+  }
+}
 #regForm.signup-container .cgf__actions:has(.cgf__btn:nth-child(2)) .cgf__btn:first-child {
   background-color: transparent;
   color: #2F4A60 !important;
 }
 #regForm.signup-container .cgf__radio-item {
   padding-right: 10px;
+}
+#regForm.signup-container input:-webkit-autofill, #regForm.signup-container input:-webkit-autofill:hover, #regForm.signup-container input:-webkit-autofill:focus, #regForm.signup-container input:-webkit-autofill:active {
+  -webkit-box-shadow: none !important;
+  background-color: transparent !important;
+  background: none !important;
 }
 
 /*! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com*/
@@ -558,7 +582,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--cgf-control-bg-color);
+  background-color: rgba(255, 255, 255, 0.2) !important;
   border-radius: var(--cgf-control-radius);
   border-style: solid;
   border-width: 1px;

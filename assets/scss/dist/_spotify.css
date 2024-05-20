@@ -6,7 +6,7 @@
   position: fixed;
   bottom: 0;
   right: -450px;
-  transition: 0.3s ease;
+  transition: 0.3s cubic-bezier(0.97, 1.24, 0.41, 0.9);
   max-width: calc(100% - 63px);
   width: 450px;
   padding-bottom: 20px;
@@ -19,7 +19,7 @@
   right: -5px;
 }
 .spotify-container .spotify-toggle {
-  padding: 14px 8px 12px 15px;
+  padding: 14px 12px 13px 14px;
   background: #18382F;
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
@@ -29,16 +29,31 @@
   border: none;
   outline: none;
   position: absolute;
-  right: 100%;
-  top: 40px;
+  right: calc(100% - 1px);
+  top: 43px;
   cursor: pointer;
 }
-.spotify-container .spotify-toggle svg {
+.spotify-container .spotify-toggle .corner-svg {
+  width: 16px;
+  height: 16px;
+  right: 0;
+  position: absolute;
+  fill: #18382F;
+}
+.spotify-container .spotify-toggle .corner-svg.top {
+  bottom: calc(100% - 1px);
+  transform: rotate(180deg);
+}
+.spotify-container .spotify-toggle .corner-svg.bottom {
+  top: calc(100% - 1px);
+  transform: rotate(90deg);
+}
+.spotify-container .spotify-toggle .spotify-icon {
   width: 40px;
   height: 40px;
-  transition: 0.3s ease;
+  transition: 0.3s cubic-bezier(0.47, 1.64, 0.81, 0.8);
   cursor: pointer;
 }
-.spotify-container .spotify-toggle:hover svg {
+.spotify-container .spotify-toggle:hover .spotify-icon {
   transform: scale(1.1);
 }

@@ -114,6 +114,13 @@
     margin-bottom: 0px;
     color: #fff;
     border: none;
+
+    i {
+        font-size: 40px;
+        font-weight: 800;
+        position: relative;
+        top: 3px;
+    }
 }
 
 .navbar-toggle {
@@ -155,11 +162,31 @@
 }
 
 .custom-nav {
-    .navbar-brand.logo {
-        padding: 0;
-        
-        img {
-            height: 40px;
+    .navbar-brand {
+        position: relative;
+
+        .logo {
+            padding: 0;
+            
+            img {
+                height: 40px;
+            }
+        }
+        .sprout-icon {
+            transition: 1s cubic-bezier(.47,1.64,.41,.8);
+            position: absolute;
+            bottom: 78%;
+            right: 56%;
+            width: 0;
+            height: 0;
+        }
+    }
+    &.stickyAdd {
+        .navbar-brand {
+            .sprout-icon {
+                width: 15px;
+                height: 15px;
+            }
         }
     }
 }

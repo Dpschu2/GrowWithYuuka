@@ -9,7 +9,7 @@ const spotifyToggle = () => {
     $('.spotify-toggle').on('click', function(){
         $('.spotify-container').toggleClass('is-open');
     });
-}
+} 
 const homeSlider = () => {
     setInterval(function(){ 
         let current = document.querySelector('.slide.active');
@@ -61,16 +61,232 @@ const initAnimations = () => {
     });
 };
 const initCoachingForm = () => {
+    let $cgfContainer;
     let interval = setInterval(() => {
-        const $cgfContainer = $('.cgf__title');
-        if ($cgfContainer.length) {
-            $cgfContainer.after(`<progress id="form-progress" value="0" max="5"> 0% </progress>`);
+        $cgfContainer = $('.cgf__title');
+        if ($cgfContainer && $cgfContainer.length) {
+            console.log($cgfContainer);
+            $cgfContainer.after(`<progress id="form-progress" value="0" max="4"> 0% </progress>`);
+            $('#regForm input[type=text]').on('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    $('#regForm .cgf__actions button:last-child').click();
+                }
+            });
             clearInterval(interval);
         }
     }, 300);
 
-    !function() {
-        "use strict";
+        const data = {
+            "preview": "form",
+            "lastChangeTime": 0,
+            "theme": "custom",
+            "themeType": "custom",
+            "customTheme": {
+                "font-family": "{\"family\":\"Barlow\",\"subsets\":[\"latin\",\"latin-ext\",\"vietnamese\"],\"variants\":[\"100\",\"100italic\",\"200\",\"200italic\",\"300\",\"300italic\",\"regular\",\"italic\",\"500\",\"500italic\",\"600\",\"600italic\",\"700\",\"700italic\",\"800\",\"800italic\",\"900\",\"900italic\"]}",
+                "container-lh": 1.5,
+                "container-bg-color": "#ffffff00",
+                "container-width": "580px",
+                "container-radius": "6px",
+                "border-color": "#ffffff00",
+                "text-color": "#1e293b",
+                "link-color": "#0f172a",
+                "error-color": "#dc2626",
+                "btn-disabled-opacity": 0.45,
+                "btn-primary-bg-color": "#2F4A60",
+                "btn-primary-text-color": "#fff",
+                "btn-font-size": "16px",
+                "btn-primary-outline-color": "#60a5fa",
+                "btn-primary-outline-opacity": "0.45",
+                "btn-secondary-bg-color": "#f0f0f1",
+                "btn-secondary-text-color": "#333",
+                "title-size": "24px",
+                "text-size": "18px",
+                "control-bg-color": "#ffffff21",
+                "control-radius": "6px",
+                "control-outline-color": "#3b82f67d",
+                "control-border-color": "#d1d5db",
+                "control-border-focus-color": "#3b82f6",
+                "control-radio-checked-bg-color": "#3b82f6",
+                "control-error-bg-color": "#fef2f2",
+                "control-error-border-color": "#ef4444",
+                "control-error-text-color": "#7f1d1d",
+                "control-group-bg-color": "#ffffff00",
+                "control-group-radius": "6px",
+                "control-group-padding": "16px",
+                "control-group-b-margin": "20px",
+                "control-label-b-margin": "4px",
+                "control-label-fw": 500
+            },
+            "fields": [
+            {
+                "id": "emailAddress",
+                "type": "SHORT_ANSWER",
+                "label": "Email",
+                "required": true,
+                "description": null
+            },
+            {
+                "id": "1486830366",
+                "type": "SHORT_ANSWER",
+                "label": "First/Preferred Name",
+                "required": true,
+                "description": null
+            }, {
+                "type": "SECTION",
+                "label": "How can I help you grow🌟",
+                "description": null
+            }, {
+                "id": "1447330797",
+                "type": "CHECKBOX",
+                "label": null,
+                "options": [{
+                    "label": "Gain Muscle",
+                    "custom": false
+                }, {
+                    "label": "Lose Weight",
+                    "custom": false
+                }, {
+                    "label": "Gain Weight",
+                    "custom": false
+                }, {
+                    "label": "Gain Confidence",
+                    "custom": false
+                }, {
+                    "label": "Improve healthy habits",
+                    "custom": false
+                }, {
+                    "label": "Improve nutrition/ eating habits",
+                    "custom": false
+                }, {
+                    "label": "Accountability/ Consistency",
+                    "custom": false
+                }],
+                "required": true,
+                "description": null
+            }, {
+                "type": "SECTION",
+                "label": null,
+                "description": null
+            }, {
+                "id": "1225614236",
+                "type": "RADIO",
+                "label": "Gender:",
+                "options": [{
+                    "label": "Female",
+                    "custom": false
+                }, {
+                    "label": "Male",
+                    "custom": false
+                }, {
+                    "label": "",
+                    "custom": true
+                }],
+                "required": true,
+                "description": null
+            }, {
+                "id": "358733618",
+                "type": "RADIO",
+                "label": "Age",
+                "options": [{
+                    "label": "under 18",
+                    "custom": false
+                }, {
+                    "label": "18-25",
+                    "custom": false
+                }, {
+                    "label": "25-35",
+                    "custom": false
+                }, {
+                    "label": "35+",
+                    "custom": false
+                }],
+                "required": true,
+                "description": null
+            }, {
+                "id": "1584871114",
+                "type": "RADIO",
+                "label": "Occupation",
+                "options": [{
+                    "label": "Office/Corporate",
+                    "custom": false
+                }, {
+                    "label": "Student",
+                    "custom": false
+                }, {
+                    "label": "Customer Service Industry (Server, Retail..)",
+                    "custom": false
+                }, {
+                    "label": "",
+                    "custom": true
+                }],
+                "required": true,
+                "description": null
+            }, {
+                "type": "SECTION",
+                "label": "✨Goals✨",
+                "description": null
+            }, {
+                "id": "319843415",
+                "type": "LONG_ANSWER",
+                "label": "3 short term goals:",
+                "required": false,
+                "description": null
+            }, {
+                "id": "233189499",
+                "type": "LONG_ANSWER",
+                "label": "What's holding you back from achieving your goals? (e.g. recent events, accountability, knowledge)",
+                "required": true,
+                "description": null
+            }, {
+                "type": "SECTION",
+                "label": "Let's get started🌱",
+                "description": null
+            }, {
+                "id": "996941872",
+                "type": "RADIO",
+                "label": "Are you ready to invest financially, mentally and physically to hit your goals?",
+                "options": [{
+                    "label": "Yes",
+                    "custom": false
+                }, {
+                    "label": "No",
+                    "custom": false
+                }],
+                "required": true,
+                "description": null
+            }, {
+                "id": "1285689872",
+                "type": "DATE",
+                "label": "When would you ideally like to start your new coaching program?",
+                "required": true,
+                "withTime": false,
+                "withYear": true,
+                "description": null
+            }],
+            "settings": {
+                "form": {
+                    "showBrandedLogo": true,
+                    "submit": "Submit"
+                },
+                "success": {
+                    "type": "page",
+                    "redirectUrl": "",
+                    "title": "",
+                    "description": "",
+                    "isSubmitAnother": true,
+                    "submitAnotherTitle": ""
+                }
+            },
+            "id": "1fD4hGk5DqqcrFzrn9Uc-xoFJAkWhlqe-1hDjdQOhrWM",
+            "googleFormId": "d/e/1FAIpQLSd5wYkRG-mp23xYwqM_q5c0ztlju563Kh_6jbbvaw0KlZ4AkQ",
+            "title": "GWY 1:1 Online Coaching",
+            "description": "",
+            "userId": "",
+            "createdAt": new Date().getTime(),
+            "updatedAt": new Date().getTime()
+        };
+        
+        console.log('a', data);
         var e, t, r, n, o, i, a, s, u = {}, l = [], c = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i, d = Array.isArray;
         function f(e, t) {
             for (var r in t)
@@ -2799,6 +3015,7 @@ const initCoachingForm = () => {
             const {label: r, description: n, className: o, rootClass: i, name: a, required: s, error: u=null, ...l} = e
               , c = !!u
               , {register: d} = jt();
+              
             return lt("input", {
                 className: ht(Mr.control, {
                     [Mr.controlError]: c
@@ -3195,6 +3412,9 @@ const initCoachingForm = () => {
         }
           , rn = e=>{
             const {children: t, isActive: r=!1} = e;
+            if (!!r) {
+                
+            }
             return lt("fieldset", {
                 disabled: !r,
                 className: ht(Mr.section, {
@@ -3221,6 +3441,12 @@ const initCoachingForm = () => {
             const t = ((e="")=>{
                 let t = "";
                 switch (e) {
+                case "SHORT_ANSWER":
+                    t = "text";
+                    break;
+                case "LONG_ANSWER":
+                    t = "textarea";
+                    break;
                 case "SHORT_ANSWER":
                     t = "text";
                     break;
@@ -3389,6 +3615,7 @@ const initCoachingForm = () => {
               , [m,v] = K(0)
               , y = m === _ - 1
               , g = 0 === m;
+              console.log('testing');
             return lt(h, {
                 children: lt("form", {
                     id: `${Lr}-${o}`,
@@ -3420,7 +3647,13 @@ const initCoachingForm = () => {
                                     disabled: n,
                                     type: "button",
                                     variant: "secondary",
-                                    onClick: ()=>!g && v(m - 1),
+                                    onClick: ()=>{
+                                        const progress = document.getElementById('form-progress');
+                                        if (progress) {
+                                            progress.value = (m - 1);
+                                        }
+                                        return !g && v(m - 1);
+                                    },
                                     children: "Back"
                                 }), y ? lt(on, {
                                     disabled: n,
@@ -3430,11 +3663,11 @@ const initCoachingForm = () => {
                                 }, "btn-submit") : lt(on, {
                                     disabled: n,
                                     type: "button",
-                                    variant: "secondary",
+                                    variant: "primary",
                                     onClick: async()=>{
                                         var e;
                                         const t = (f && f[m] && ((null == (e = f[m]) ? void 0 : e.items) || [])).filter((({id: e})=>!!e)).map((({id: e, type: t})=>`${e}${an(t)}`));
-                                        (!((null == t ? void 0 : t.length) > 0) || await s(t)) && !y && v(m + 1)
+                                        (!((null == t ? void 0 : t.length) > 0) || await s(t)) && !y && v(m + 1) && $('#form-progress') && $('#form-progress').length && $('#form-progress').val(m + 1);
                                     }
                                     ,
                                     children: "Next"
@@ -3452,10 +3685,12 @@ const initCoachingForm = () => {
         }
           , ln = (e,t)=>{
             let r = e;
-            if (e.includes("_other_option_response"))
+            if (e.includes("_other_option_response")) {
                 r = e.replace("_other", ".other");
+            }
             else if (t) {
                 const [n,o] = e.split("_");
+                console.log('n', n);
                 switch (r = n,
                 o) {
                 case "date":
@@ -3475,12 +3710,12 @@ const initCoachingForm = () => {
                     return [{
                         key: `entry.${r}_hour`,
                         value: i
-                    }, {
+                    }, { 
                         key: `entry.${r}_minute`,
                         value: a
-                    }]
+                    }] 
                 }
-            }
+            } 
             return [{
                 key: `entry.${r}`,
                 value: t
@@ -3488,12 +3723,6 @@ const initCoachingForm = () => {
         }
           , cn = "myform"
           , dn = e=>{
-            const {action: t="", label: r={}} = e || {};
-            t && ("ga"in window && window.ga("send", "event", cn, t, JSON.stringify(r)),
-            "gtag"in window && window.gtag("event", cn, {
-                action: t,
-                form: JSON.stringify(r)
-            }))
         }
           , fn = e=>{
             const {cliendId: t="", eventName: r="", eventParams: n={}} = e || {};
@@ -3583,6 +3812,7 @@ const initCoachingForm = () => {
                                     id: n
                                 }
                             });
+                            console.log('check');
                             const t = await (async(e,t)=>{
                                 const r = new URLSearchParams;
                                 Object.entries(t).forEach((([e,t])=>{
@@ -3598,7 +3828,7 @@ const initCoachingForm = () => {
                                     ))
                                 }
                                 ));
-                                const n = `https://docs.google.com/forms/d/${e}/formResponse?submit=Submit&${r.toString()}`;
+                                const n = `https://docs.google.com/forms/${e}/formResponse?submit=Submit&${r.toString()}`;
                                 return await fetch(n, {
                                     method: "GET",
                                     mode: "no-cors",
@@ -4790,7 +5020,7 @@ const initCoachingForm = () => {
                     get: function() {
                         return ui = !0,
                         !0
-                    }
+                    } 
                 });
                 window.addEventListener("test", li, li),
                 window.removeEventListener("test", li, li)
@@ -5065,7 +5295,7 @@ const initCoachingForm = () => {
                 returnFocus: !0,
                 onActivation: y,
                 disabled: null != r ? r : !f,
-                crossFrame: l ?? !0
+                crossFrame: !l ? !0 : l
             }, p(bi, {
                 allowPinchZoom: e,
                 enabled: null != n ? !n : f
@@ -5201,41 +5431,12 @@ const initCoachingForm = () => {
             return e["font-family"] || (r += `--cgf-font-family: ${Ai};\n`),
             r
         }
-        const Ti = e=>{
-            const t = Object.entries(e || {})
-              , r = [];
-            return t.forEach((([e,t])=>{
-                if (e.includes("font-family") && t) {
-                    let e = {};
-                    try {
-                        e = JSON.parse(t)
-                    } catch (n) {}
-                    const o = function(e) {
-                        const {family: t, variants: r=[], subsets: n=[]} = e || {};
-                        if (!t || t === Oi)
-                            return null;
-                        const o = r.join(",")
-                          , i = n.join(",");
-                        return `https://fonts.googleapis.com/css?${new URLSearchParams({
-                            family: `${t}:${o}`,
-                            display: "swap",
-                            subset: i
-                        }).toString()}`
-                    }(e);
-                    o && !r.includes(o) && r.push(o)
-                }
-            }
-            )),
-            r
-        }
-          , Di = e=>{
+          const Di = e=>{
             const {formData: t, dataProps: r} = e
               , {mode: n="standard"} = r
               , o = (null == t ? void 0 : t.theme) || "minimal"
               , i = (null == t ? void 0 : t.customTheme) || {};
             null == t || t.settings;
-            const a = "custom" === o
-              , s = Ti(i);
             return lt("div", {
                 className: ht(Mr.themeBase, `${Mr.theme}-${o}`),
                 children: [lt("link", {
@@ -5245,10 +5446,7 @@ const initCoachingForm = () => {
                     rel: "preconnect",
                     href: "https://fonts.gstatic.com",
                     crossOrigin: !0
-                }), s.map((e=>lt("link", {
-                    href: e,
-                    rel: "stylesheet"
-                }, e))), lt("style", {
+                }), lt("style", {
                     children: `\n          .${Mr.theme}-${o} {\n            ${Fi(i)}\n          }\n        `
                 }), {
                     popup: lt(Ci, {
@@ -5346,15 +5544,15 @@ const initCoachingForm = () => {
             dataProps: t
         })
           , Vi = e=>{
-            const t = null == e ? void 0 : e.myform
-              , r = null == e ? void 0 : e.myformConfig;
+            const t = e.myform, 
+                r = data;
             return "string" == typeof t && t.length ? lt($i, {
                 formId: t,
                 dataProps: e
-            }) : "string" == typeof r && r.length ? lt(Pi, {
+            }) : "object" == typeof r && Object.keys(r).length ? lt(Pi, {
                 dataProps: e,
-                formData: JSON.parse(r)
-            }) : void 0
+                formData: r
+            }) : void 0 
         }
         ;
         (()=>{
@@ -5485,6 +5683,7 @@ const initCoachingForm = () => {
                     ,
                     rerender: r=>{
                         t._roots.forEach((n=>{
+                            console.log(n, r, t);
                             st({
                                 island: t,
                                 widget: e,
@@ -5525,6 +5724,5 @@ const initCoachingForm = () => {
             }, window.MyForm || {}))
         }
         )()
-    }();
     
 }

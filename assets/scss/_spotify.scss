@@ -3,20 +3,24 @@
     position: fixed;
     bottom: 0;
     right: -450px;
-    transition: 0.3s ease;
+    transition: 0.3s cubic-bezier(.97,1.24,.41,0.9);
     max-width: calc(100% - 63px);
     width: 450px;
     padding-bottom: 20px;
     padding-right: 20px;
     padding-top: 20px;
     z-index: 48;
-    height: 80%;
+    height: 88%;
     
+    @media(max-width: 767px) {
+        width: 100%;
+        right: calc(-100% + 63px);
+    }
     &.is-open {
         right: -5px;
     }
     .spotify-toggle {
-        padding: 14px 8px 12px 15px;
+        padding: 8px 9px 8px 9px;
         background: variables.$spotifyBg;
         border-top-left-radius: 35px;
         border-bottom-left-radius: 35px;
@@ -26,18 +30,47 @@
         border: none;
         outline: none;
         position: absolute;
-        right: 100%;
-        top: 40px;
+        right: calc(100% - 1px);
+        top: 45px;
         cursor: pointer;
 
-        svg {
+        @media(max-width: 767px) {
+            padding: 8px 6px 8px 9px;
+        }
+        .corner-svg {
+            width: 16px;
+            height: 16px;
+            right: 1px;
+            position: absolute;
+            fill: variables.$spotifyBg;
+
+            @media(max-width: 767px) {
+                width: 12px;
+                height: 12px;
+            }
+            &.top {
+               bottom: 100%;
+               transform: rotate(180deg);
+            }
+            &.bottom {
+                top: 100%;
+                transform: rotate(90deg);
+            }
+        }
+        .spotify-icon {
             width: 40px;
             height: 40px;
-            transition: 0.3s ease;
+            transition: 0.3s cubic-bezier(.47,1.64,.81,.8);
             cursor: pointer;
+            fill: variables.$spotifyIcon !important;
+
+            @media(max-width: 767px) {
+                width: 30px;
+                height: 30px;
+            }
         }
         &:hover {
-            svg {
+            .spotify-icon {
                 transform: scale(1.1);
             }
         }

@@ -5,6 +5,11 @@
 #about {
   padding: 100px 0;
 }
+@media (max-width: 767px) {
+  #about {
+    padding: 70px 0;
+  }
+}
 #about .video-container {
   display: flex;
   align-items: center;
@@ -15,6 +20,12 @@
   height: auto;
   padding-right: 30px;
   aspect-ratio: 560/300;
+}
+@media (max-width: 767px) {
+  #about .video-container .video-iframe {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 
 .about-detail {
@@ -47,4 +58,10 @@
 }
 .skill-custom .progress-bar {
   background: #000;
+}
+
+@media (max-width: 767px) {
+  .about-col .about-content {
+    margin-top: 60px;
+  }
 }

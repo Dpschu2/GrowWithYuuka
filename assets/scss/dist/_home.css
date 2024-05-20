@@ -9,6 +9,7 @@
   align-items: center;
   flex-direction: column;
   padding: 0 !important;
+  min-height: 550px;
 }
 .home-bg .scroll_down {
   position: absolute;
@@ -68,6 +69,7 @@
 }
 .home-bg .get-started {
   margin-bottom: 22px;
+  font-size: 30px;
 }
 .home-bg .next-steps {
   margin: 0 auto 20px;

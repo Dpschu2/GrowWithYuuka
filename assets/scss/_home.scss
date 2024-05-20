@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     padding: 0 !important;
+    min-height: 550px;
 
     .scroll_down {
         position: absolute;
@@ -66,6 +67,7 @@
     }
     .get-started {
         margin-bottom: 22px;
+        font-size: 30px;
     }
     .next-steps {
         margin: 0 auto 20px;

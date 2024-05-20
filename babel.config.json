@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "@babel/plugin-transform-nullish-coalescing-operator",
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "presets": ["@babel/preset-env"]
+}
