@@ -404,6 +404,11 @@
 
 .read-more-text {
   display: none;
+  overflow: hidden;
+  max-height: 0;
+}
+.read-more-text.shown {
+  max-height: 500px;
 }
 
 .contact-caption {

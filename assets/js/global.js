@@ -8,7 +8,7 @@ $(document).ready(() => {
 });
 const initReadMore = () => {
     $('.read-more').on('click', () => {
-        $('.read-more-text').show();
+        $('.read-more-text').addClass('shown');
         $('.read-more').hide();
     });
 }
