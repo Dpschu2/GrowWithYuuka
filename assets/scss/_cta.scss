@@ -9,6 +9,9 @@
     background-position: center bottom !important;
     display: flex;
 
+    @media(max-width: 767px) {
+        background-attachment: initial !important;
+    }
     .bg-overlay {
         &:after {
             background: rgba(0, 0, 0, 0.5);

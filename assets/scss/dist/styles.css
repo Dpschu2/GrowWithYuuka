@@ -568,6 +568,11 @@
   background-position: center bottom !important;
   display: flex;
 }
+@media (max-width: 767px) {
+  .bg-cta {
+    background-attachment: initial !important;
+  }
+}
 .bg-cta .bg-overlay:after {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -813,6 +818,11 @@
   background-size: cover !important;
   background-position: 50% 60% !important;
   background-attachment: fixed !important;
+}
+@media (max-width: 767px) {
+  #home-slides .slide {
+    background-attachment: initial !important;
+  }
 }
 #home-slides .slide.active {
   opacity: 1;

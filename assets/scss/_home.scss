@@ -145,6 +145,9 @@
       background-position: 50% 60% !important;
       background-attachment: fixed !important;
 
+      @media(max-width: 767px) {
+          background-attachment: initial !important;
+      }
       &.active { 
         opacity: 1;
 
