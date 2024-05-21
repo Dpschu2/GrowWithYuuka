@@ -138,6 +138,9 @@ button:focus {
         transform: rotate(360deg);
     }
 } 
+svg.hidden {
+    display: none;
+}
 .container {
     max-width: 1476px;
     width: 100%;
@@ -285,7 +288,7 @@ button:focus {
 }
 
 .h-100vh {
-    height: 100vh;
+    height: 100dvh;
 }
 
 .z-index {

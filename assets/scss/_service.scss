@@ -44,8 +44,11 @@
             }
             .image-col {
                 .image-container {
-                    top: 45px;
-                    left: -90px;
+
+                    @media(min-width: 768) {
+                        top: 45px;
+                        left: -90px;
+                    }
                 }
             }
             .service-img {

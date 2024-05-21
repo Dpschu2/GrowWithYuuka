@@ -26,6 +26,9 @@
             .section-main-title {
                 margin-top: 30px;
             }
+            @media(max-width: 767px) {
+                padding-right: 12px;
+            }
         }
         &>.col-lg-7 {
             @media(max-width: 991px) {
@@ -167,7 +170,10 @@
     }
     .cgf__container {
         box-shadow: none;
-        border: none;
+        border: none !important;
+    }
+    .cgf-theme-custom {
+        border: none !important;
     }
     .cgf__label {
         font-size: 20px;

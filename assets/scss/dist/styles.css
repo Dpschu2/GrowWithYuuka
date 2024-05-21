@@ -563,9 +563,9 @@
 .bg-cta {
   position: relative;
   background-image: url(/assets/img/peaceful.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center bottom;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center bottom !important;
   display: flex;
 }
 .bg-cta .bg-overlay:after {
@@ -809,10 +809,10 @@
   right: 0;
   bottom: 0;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  background-size: cover;
-  background-position: 50% 60%;
-  background-attachment: fixed;
+  transition: opacity 1.5s ease-in-out !important;
+  background-size: cover !important;
+  background-position: 50% 60% !important;
+  background-attachment: fixed !important;
 }
 #home-slides .slide.active {
   opacity: 1;
@@ -919,9 +919,11 @@
     align-items: flex-start;
   }
 }
-.services-container .services-row.row-2 .image-col .image-container {
-  top: 45px;
-  left: -90px;
+@media (min-width: 768) {
+  .services-container .services-row.row-2 .image-col .image-container {
+    top: 45px;
+    left: -90px;
+  }
 }
 .services-container .services-row.row-2 .service-img {
   transform: rotate(354deg);
@@ -1106,6 +1108,11 @@
 #get-started .get-started-content > .col-lg-5 .section-main-title {
   margin-top: 30px;
 }
+@media (max-width: 767px) {
+  #get-started .get-started-content > .col-lg-5 {
+    padding-right: 12px;
+  }
+}
 @media (max-width: 991px) {
   #get-started .get-started-content > .col-lg-7 {
     padding: 0 20px;
@@ -1235,7 +1242,10 @@
 }
 #regForm.signup-container .cgf__container {
   box-shadow: none;
-  border: none;
+  border: none !important;
+}
+#regForm.signup-container .cgf-theme-custom {
+  border: none !important;
 }
 #regForm.signup-container .cgf__label {
   font-size: 20px;
@@ -1519,6 +1529,10 @@ button:focus {
     transform: rotate(360deg);
   }
 }
+svg.hidden {
+  display: none;
+}
+
 .container {
   max-width: 1476px;
   width: 100%;
@@ -1658,7 +1672,7 @@ button:focus {
 }
 
 .h-100vh {
-  height: 100vh;
+  height: 100dvh;
 }
 
 .z-index {
