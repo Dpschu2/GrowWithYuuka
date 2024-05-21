@@ -317,32 +317,32 @@
                 <div class="col-lg-8">
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form method="post" action="php/contact.php" name="contact-form" id="working_form">
+                        <form method="post" action="/mail.php" name="contact-form" id="working_form">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group mt-2 mb-3">
-                                        <label for="name" class="fw-bold mb-2">Name</label>
-                                        <input name="name" id="name" type="text" class="form-control" placeholder="Your name..." required>
+                                        <label for="contact-name" class="fw-bold mb-2">Name</label>
+                                        <input name="contact-name" id="contact-name" type="text" class="form-control" placeholder="Your name..." required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group mt-2 mb-3">
-                                        <label for="email" class="fw-bold mb-2">Email address</label>
-                                        <input name="email" id="email" type="email" class="form-control" placeholder="Your email..." required>
+                                        <label for="contact-email" class="fw-bold mb-2">Email address</label>
+                                        <input name="contact-email" id="contact-email" type="email" class="form-control" placeholder="Your email..." required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3">
-                                        <label for="subject" class="fw-bold mb-2">Subject</label>
-                                        <input type="text" class="form-control" id="subject" placeholder="Your Subject.." />
+                                        <label for="contact-subject" class="fw-bold mb-2">Subject</label>
+                                        <input type="text" class="form-control" name="contact-subject" id="contact-subject" placeholder="Your Subject.." />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3">
-                                        <label for="comments" class="fw-bold mb-2">Message</label>
-                                        <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Your message..."></textarea>
+                                        <label for="contact-comments" class="fw-bold mb-2">Message</label>
+                                        <textarea name="contact-comments" id="contact-comments" rows="4" class="form-control" placeholder="Your message..."></textarea>
                                     </div>
                                 </div>
                             </div>

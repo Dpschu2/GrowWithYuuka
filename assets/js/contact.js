@@ -1,7 +1,7 @@
 $('#working_form').submit(function() {
 
     var action = $(this).attr('action');
-
+    console.log('test', action);
     $("#working_form #message").slideUp(750, function() {
         $('#working_form #message').hide();
 
@@ -10,13 +10,15 @@ $('#working_form').submit(function() {
             .attr('disabled', 'disabled');
 
         $.post(action, {
-                name: $('#working_form #name').val(),
-                email: $('#working_form #email').val(),
-                comments: $('#working_form #comments').val(),
+                name: $('#working_form #contact-name').val(),
+                email: $('#working_form #contact-email').val(),
+                comments: $('#working_form #contact-comments').val(),
+                subject: $('#working_form #contact-subject').val()
             },
             function(data) {
+                console.log('message', data);
                 this.getElementById('message').innerHTML = data;
-                $('#working_form #message').slideDown('slow');
+                $('#working_form #contact-message').slideDown('slow');
                 $('#working_form #cform img.gif_loader').fadeOut('slow', function() {
                     $(this).remove()
                 });
