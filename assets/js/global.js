@@ -1,15 +1,18 @@
-$(document).ready(() => {
+const init = () => {
     homeSlider();
-    scrollNav()
+    scrollNav();
     initAnimations();
-    initCoachingForm();
     spotifyToggle();
-    initReadMore()
-});
+    initReadMore();
+    // initCoachingForm();
+}
+
 const initReadMore = () => {
     $('.read-more').on('click', () => {
-        $('.read-more-text').addClass('shown');
-        $('.read-more').hide();
+        $('.read-more-text').toggleClass('shown');
+        setTimeout(function(){
+            $('.read-more-p').toggleClass('show-less');
+        }, 1000);
     });
 }
 const spotifyToggle = () => {
@@ -52,16 +55,21 @@ const initAnimations = () => {
         let web_window = $(window);
 
         function check_if_in_view() {
-            let window_height = web_window.height();
+            let window_height = screen.height;
             let window_top_position = web_window.scrollTop();
             let window_bottom_position = (window_top_position + window_height);
             $.each(animation_elements, function () {
                 let element = $(this);
-                let element_height = $(element).outerHeight();
-                let element_top_position = $(element).offset().top;
+                let element_height = element.outerHeight();
+                let element_top_position = element.offset().top;
                 let element_bottom_position = (element_top_position + element_height);
-                const isInView = (element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position);
-                element.toggleClass('in-view', isInView);
+                const isInView = (element_bottom_position >= window_top_position) && (element_top_position < window_bottom_position);
+                if (isInView && !element.hasClass('in-view')) {
+                    element.addClass('in-view');
+                }
+                else if (!isInView && element.hasClass('in-view')) {
+                    element.removeClass('in-view');
+                }
             });
         }
         $(window).on('scroll resize', function () {
@@ -71,24 +79,31 @@ const initAnimations = () => {
     });
 };
 const initCoachingForm = () => {
-    let $cgfContainer;
-    let checks = 10;
-    let interval = setInterval(() => {
-        $cgfContainer = $('.cgf__title');
-        console.log($cgfContainer);
-        if ($cgfContainer && $cgfContainer.length) {
-            $cgfContainer.after(`<progress id="form-progress" value="0" max="4"> 0% </progress>`);
-            $('#regForm input[type=text]').on('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    $('#regForm .cgf__actions button:last-child').click();
+    const waitForElm = (selector) => {
+        return new Promise(resolve => {
+            if (document.querySelector(selector)) {
+                return resolve(document.querySelector(selector));
+            }
+            const observer = new MutationObserver(mutations => {
+                if (document.querySelector(selector)) {
+                    observer.disconnect();
+                    resolve(document.querySelector(selector));
                 }
             });
-            clearInterval(interval);
-        }
-        if (--checks < 1) {
-            clearInterval(interval);
-        }
-    }, 300);
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+            });
+        });
+    }
+    waitForElm('.cgf__title').then(function(el){
+        $(el[0]).after("<progress id=\"form-progress\" value=\"0\" max=\"4\"> 0% </progress>");
+        $('#regForm input[type=text]').on('keypress', function (e) {
+            if (e.key === 'Enter') {
+                $('#regForm .cgf__actions button:last-child').click();
+            }
+        });
+    });
 
     const data = {
         "preview": "form",
@@ -291,15 +306,15 @@ const initCoachingForm = () => {
                 "submitAnotherTitle": ""
             }
         },
-        "id": "1fD4hGk5DqqcrFzrn9Uc-xoFJAkWhlqe-1hDjdQOhrWM",
-        "googleFormId": "u/0/d/e/1FAIpQLSd5wYkRG-mp23xYwqM_q5c0ztlju563Kh_6jbbvaw0KlZ4AkQ",
+        "id": "",
+        "googleFormId": "e/1FAIpQLScyV1HN01rK3cwxSnm68WfhufIIyfkrsLQiEkxv-kwsx47FAA",
         "title": "GWY 1:1 Online Coaching",
         "description": "",
         "userId": "",
         "createdAt": new Date().getTime(),
         "updatedAt": new Date().getTime()
     };
-  
+
     var e, t, r, n, o, i, a, s, u = {},
         l = [],
         c = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,
@@ -718,7 +733,8 @@ const initCoachingForm = () => {
 
     function $(e, r, n) {
         var o, i;
-        if (t.unmount && t.unmount(e),
+        console.log('t', t);
+        if (t && t.unmount && t.unmount(e),
             (o = e.ref) && (o.current && o.current !== e.__e || D(o, null, r)),
             null != (o = e.__c)) {
             if (o.componentWillUnmount)
@@ -1183,10 +1199,12 @@ const initCoachingForm = () => {
             this.o = null
     }
     t.unmount = function (e) {
+        if (e) {
             var t = e.__c;
             t && t.__R && t.__R(),
                 t && 32 & e.__u && (e.type = null),
-                Se && Se(e)
+                Se && Se(e);
+        }
         },
         (ke.prototype = new v).__c = function (e, t) {
             var r = t.__c,
@@ -3820,13 +3838,15 @@ const initCoachingForm = () => {
                     fields: t ? r : e
                 }
             })(u), [m, v] = K(0), y = m === _ - 1, g = 0 === m;
-            
+
             return lt(h, {
                 children: lt("form", {
                     id: `${Lr}-${o}`,
                     className: Mr.form,
                     onSubmit: r,
-                    noValidate: !0,
+                    action: "https://docs.google.com/forms/d/e/1FAIpQLScyV1HN01rK3cwxSnm68WfhufIIyfkrsLQiEkxv-kwsx47FAA/formResponse",
+                    // method: "POST",
+                    // noValidate: !0,
                     children: [i ? lt("div", {
                         className: Mr.title,
                         dangerouslySetInnerHTML: {
@@ -4052,7 +4072,7 @@ const initCoachingForm = () => {
                                             r.append(e, t)
                                         }))
                                     }));
-                                    const n = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSd5wYkRG-mp23xYwqM_q5c0ztlju563Kh_6jbbvaw0KlZ4AkQ/formResponse`;
+                                    const n = `https://docs.google.com/forms/d/e/1FAIpQLScyV1HN01rK3cwxSnm68WfhufIIyfkrsLQiEkxv-kwsx47FAA/formResponse`;
                                     return await fetch(n, {
                                             method: "GET",
                                             mode: "no-cors",
@@ -5953,5 +5973,5 @@ const initCoachingForm = () => {
                 destroy: e.destroy
             }, window.MyForm || {}))
     })()
-
 }
+init();
