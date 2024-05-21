@@ -38,11 +38,13 @@
             color: variables.$white;
             background-color: variables.$black;
             
-            .mdi {
+            svg {
                 fill: variables.$white;
             }
         }
-        .mdi {
+        svg {
+            height: 100%;
+            width: 100%;
             transition: 0.3s ease;
             fill: variables.$black;
         }
