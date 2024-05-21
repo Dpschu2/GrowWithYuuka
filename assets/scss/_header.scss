@@ -20,8 +20,7 @@
     &.stickyadd, &:has(.navbar-toggler[aria-expanded="true"]) {
         background-color: rgba(variables.$darktext, 0.6); 
         padding: 8px 0;
-        box-shadow: 0px 0px 18px 1px rgba(variables.$white, 0.1);
-        backdrop-filter: saturate(180%) blur(10px);
+        backdrop-filter: saturate(180%) blur(10px) !important;
         box-shadow: 0px 3px 14px 4px rgba(0,0,0,0.11);
 
         .navbar-nav {

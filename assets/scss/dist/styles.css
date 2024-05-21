@@ -220,8 +220,7 @@
 .custom-nav.stickyadd, .custom-nav:has(.navbar-toggler[aria-expanded=true]) {
   background-color: rgba(0, 41, 74, 0.6);
   padding: 8px 0;
-  box-shadow: 0px 0px 18px 1px rgba(255, 255, 255, 0.1);
-  backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px) !important;
   box-shadow: 0px 3px 14px 4px rgba(0, 0, 0, 0.11);
 }
 .custom-nav.stickyadd .navbar-nav li a, .custom-nav:has(.navbar-toggler[aria-expanded=true]) .navbar-nav li a {
@@ -1138,7 +1137,7 @@
 
 #regForm.signup-container {
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) !important;
   color: rgba(92, 92, 92, 0.561);
   box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.24);
   position: relative;
@@ -1226,7 +1225,7 @@
   border: none;
   outline: none !important;
   border-radius: 30px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) !important;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.03);
   font-weight: 500;
