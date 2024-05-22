@@ -54,7 +54,7 @@
         transition: 1.5s ease;
 
         &.in-view {
-          animation: slideDown 1.5s ease forwards;
+          animation: slideDown 1s ease forwards;
           opacity: 1;
         }
     }
@@ -65,7 +65,7 @@
         transition: 1.5s ease;
 
         &.in-view {
-          animation: slideLeft 1.5s ease forwards;
+          animation: slideLeft 1s ease forwards;
           opacity: 1;
         }
     }
@@ -76,7 +76,7 @@
         transition: 1.5s ease;
 
         &.in-view {
-          animation: slideRight 1.5s ease forwards;
+          animation: slideRight 1s ease forwards;
           opacity: 1;
         }
     }
@@ -87,7 +87,7 @@
         transition: 1.5s ease;
 
         &.in-view {
-          animation: slideUp 1.5s ease forwards;
+          animation: slideUp 1s ease forwards;
           opacity: 1;
         }
     }

@@ -46,7 +46,7 @@
   transition: 1.5s ease;
 }
 .animation-element.slide-down.in-view {
-  animation: slideDown 1.5s ease forwards;
+  animation: slideDown 1s ease forwards;
   opacity: 1;
 }
 .animation-element.slide-left {
@@ -56,7 +56,7 @@
   transition: 1.5s ease;
 }
 .animation-element.slide-left.in-view {
-  animation: slideLeft 1.5s ease forwards;
+  animation: slideLeft 1s ease forwards;
   opacity: 1;
 }
 .animation-element.slide-right {
@@ -66,7 +66,7 @@
   transition: 1.5s ease;
 }
 .animation-element.slide-right.in-view {
-  animation: slideRight 1.5s ease forwards;
+  animation: slideRight 1s ease forwards;
   opacity: 1;
 }
 .animation-element.slide-up {
@@ -76,7 +76,7 @@
   transition: 1.5s ease;
 }
 .animation-element.slide-up.in-view {
-  animation: slideUp 1.5s ease forwards;
+  animation: slideUp 1s ease forwards;
   opacity: 1;
 }
 
@@ -220,8 +220,12 @@
 .custom-nav.stickyadd, .custom-nav:has(.navbar-toggler[aria-expanded=true]) {
   background-color: rgba(0, 41, 74, 0.6);
   padding: 8px 0;
-  backdrop-filter: saturate(180%) blur(10px) !important;
-  box-shadow: 0px 3px 14px 4px rgba(0, 0, 0, 0.11);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(17, 94, 183, 0.35) !important;
+  box-shadow: 0 4px 22px 0 rgba(31, 38, 135, 0.27) !important;
+  backdrop-filter: blur(14.5px) !important;
+  -webkit-backdrop-filter: blur(14.5px) !important;
 }
 .custom-nav.stickyadd .navbar-nav li a, .custom-nav:has(.navbar-toggler[aria-expanded=true]) .navbar-nav li a {
   color: #FFFFFF;
@@ -252,6 +256,11 @@
 }
 .custom-nav #navbarCollapse {
   justify-content: flex-end;
+}
+@media (max-width: 991px) {
+  .custom-nav #navbarCollapse {
+    margin-bottom: 10px;
+  }
 }
 
 .navLink {
@@ -509,6 +518,40 @@
   font-family: "Chido";
   src: url("/assets/fonts/chido.otf") format("opentype");
 }
+@media (max-width: 991px) {
+  #contact .mt-4 {
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 991px) {
+  #contact .col-lg-4 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #contact .col-lg-4 .mt-4:first-child {
+    position: relative;
+    right: 50px;
+    top: 2px;
+  }
+  #contact .col-lg-4 .mt-4:last-child {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 480px) {
+  #contact .col-lg-4 .mt-4:first-child {
+    right: 30px;
+  }
+  #contact .col-lg-4 .mt-4:last-child {
+    margin-left: 0;
+  }
+}
+@media (max-width: 370px) {
+  #contact .col-lg-4 .mt-4:first-child {
+    right: 20px;
+  }
+}
+
 .form-sub-title {
   font-size: 15px;
   line-height: 24px;
@@ -807,6 +850,7 @@
   list-style-type: none;
   height: 100dvh;
   width: 100vw;
+  min-height: 100%;
 }
 #home-slides .slide {
   position: absolute;
@@ -950,6 +994,15 @@
   top: 45px;
   left: -30px;
   width: 97%;
+  transform-origin: center;
+}
+.services-container .services-row .image-col .image-container .center-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 0;
+  width: 0;
 }
 .services-container .services-row .services-content {
   z-index: 1;
@@ -1183,8 +1236,8 @@
   overflow: hidden;
   transition: 0.5s ease;
 }
-#regForm.signup-container progress::-webkit-progress-value.finish {
-  background: #2F4A60;
+#regForm.signup-container progress.finish::-webkit-progress-value {
+  background: #2bbab2;
 }
 #regForm.signup-container input.invalid {
   border: 1px solid rgba(255, 0, 0, 0.277);
@@ -1312,6 +1365,15 @@
 #regForm.signup-container .cgf-theme-base .cgf__radio:before {
   background-color: #2F4A60 !important;
 }
+#regForm.signup-container .cgf__description {
+  font-size: 19px;
+}
+#regForm.signup-container .cgf__btn-link {
+  color: #008bff !important;
+}
+#regForm.signup-container .cgf__btn-link:hover {
+  color: #085fa6 !important;
+}
 
 @font-face {
   font-family: "Chido";
@@ -1328,7 +1390,7 @@
   padding-right: 20px;
   padding-top: 20px;
   z-index: 48;
-  height: 88%;
+  height: 88vh;
 }
 @media (max-width: 767px) {
   .spotify-container {
@@ -1353,6 +1415,8 @@
   right: calc(100% - 1px);
   top: 45px;
   cursor: pointer;
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.58) !important;
+  clip-path: inset(-16px 1px -16px -16px);
 }
 @media (max-width: 767px) {
   .spotify-container .spotify-toggle {
@@ -1395,6 +1459,9 @@
 }
 .spotify-container .spotify-toggle:hover .spotify-icon {
   transform: scale(1.1);
+}
+.spotify-container iframe {
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.58) !important;
 }
 
 @font-face {

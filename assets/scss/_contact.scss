@@ -1,7 +1,46 @@
 @use 'variables';
 // contact
 #contact {
-    
+    .mt-4 {
+        @media(max-width: 991px) {
+            margin-top: 0 !important;
+        }
+    }
+    .col-lg-4 {
+        @media(max-width: 991px) {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .mt-4 {
+                &:first-child {
+                    position: relative;
+                    right: 50px;
+                    top: 2px;
+                }
+                &:last-child {
+                    margin-left: 20px;
+                }
+            }
+        }
+        @media(max-width: 480px) {
+            .mt-4 {
+                &:first-child {
+                    right: 30px;
+                }
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        @media(max-width: 370px) {
+            .mt-4 {
+                &:first-child {
+                    right: 20px;
+                }
+            }
+        }
+    }
 }
 .form-sub-title {
     font-size: 15px;
