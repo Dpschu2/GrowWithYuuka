@@ -186,6 +186,11 @@
             right: 56%;
             width: 0;
             height: 0;
+            
+            @media(max-width: 767px) {
+                bottom: 76%;
+                right: 55%;
+            }
         }
     }
     &.stickyAdd {
