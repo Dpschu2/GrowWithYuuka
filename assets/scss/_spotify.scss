@@ -2,6 +2,7 @@
 .spotify-container {
     position: fixed;
     bottom: 0;
+    top: 90px;
     right: -450px;
     transition: 0.3s linear;
     max-width: calc(100% - 63px);
@@ -15,6 +16,15 @@
     @media(max-width: 767px) {
         width: 100%;
         right: calc(-100% + 63px);
+    }
+    &:before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 87px;
+        top: 30px;
+        left: 0px;
+        background: variables.$spotifyBg;
     }
     &.is-open {
         right: -5px;

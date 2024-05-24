@@ -378,17 +378,37 @@
   src: url("/assets/fonts/chido.otf") format("opentype");
 }
 #about {
-  padding: 100px 0;
+  padding: 0;
+  overflow: initial;
+}
+#about .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
 }
 @media (max-width: 767px) {
-  #about {
-    padding: 70px 0;
+  #about .row {
+    margin: 0;
   }
 }
 #about .video-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
+  top: 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  float: left;
+  margin: 50px 0 20px;
+}
+@media (max-width: 767px) {
+  #about .video-container {
+    position: relative;
+    margin: 0 0 20px;
+  }
 }
 #about .video-container .video-iframe {
   width: 100%;
@@ -404,6 +424,27 @@
 }
 #about .video-container img {
   position: relative;
+}
+#about .about-col {
+  padding: 130px 0;
+  height: 100%;
+  position: relative;
+  top: 0;
+}
+@media (max-width: 767px) {
+  #about .about-col {
+    padding: 70px 0;
+  }
+}
+
+.about-img-container {
+  width: 100%;
+  max-height: 88vh;
+}
+.about-img-container img {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 0;
 }
 
 .read-more-p {
@@ -450,15 +491,6 @@
 .contact-caption {
   width: 460px;
   max-width: 100%;
-}
-
-.about-img-container {
-  width: 100%;
-}
-.about-img-container img {
-  width: 100%;
-  object-fit: cover;
-  margin-top: 0;
 }
 
 .about-content .about-text {
@@ -640,7 +672,7 @@
 }
 @media (max-width: 767px) {
   .footer .footer-container {
-    margin-right: 0;
+    margin: 0;
   }
 }
 .footer .footer-container .footer-content {
@@ -1234,7 +1266,7 @@
   box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.3);
   clip-path: inset(0 -120% 0 0);
   overflow: hidden;
-  transition: 0.5s ease;
+  transition: 0.8s ease-in-out;
 }
 #regForm.signup-container progress.finish::-webkit-progress-value {
   background: #2bbab2;
@@ -1382,21 +1414,31 @@
 .spotify-container {
   position: fixed;
   bottom: 0;
+  top: 90px;
   right: -450px;
-  transition: 0.3s cubic-bezier(0.97, 1.24, 0.41, 0.9);
+  transition: 0.3s linear;
   max-width: calc(100% - 63px);
   width: 450px;
   padding-bottom: 20px;
   padding-right: 20px;
   padding-top: 20px;
   z-index: 48;
-  height: 88vh;
+  height: 88%;
 }
 @media (max-width: 767px) {
   .spotify-container {
     width: 100%;
     right: calc(-100% + 63px);
   }
+}
+.spotify-container:before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 87px;
+  top: 30px;
+  left: 0px;
+  background: #083048;
 }
 .spotify-container.is-open {
   right: -5px;
