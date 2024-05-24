@@ -5,6 +5,7 @@
   "private": true,
   "author": "Dean Schulz",
   "license": "MIT",
+  "module": "CommonJS",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dpschu2/GrowWithYuuka"

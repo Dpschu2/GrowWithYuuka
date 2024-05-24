@@ -232,3 +232,7 @@
 #regForm.signup-container .cgf__btn-link:hover {
   color: #085fa6 !important;
 }
+
+.hide-home {
+  display: none !important;
+}
