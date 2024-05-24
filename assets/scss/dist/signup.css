@@ -171,6 +171,11 @@
   display: grid;
   grid-template-columns: auto auto;
 }
+@media (max-width: 470px) {
+  #regForm.signup-container .cgf__radio-group {
+    grid-template-columns: auto;
+  }
+}
 #regForm.signup-container .cgf__btn {
   background-color: #2F4A60;
   border: 2px solid #2F4A60;

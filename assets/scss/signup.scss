@@ -182,6 +182,10 @@
     .cgf__radio-group {
         display: grid;
         grid-template-columns: auto auto;
+
+        @media(max-width: 470px) {
+            grid-template-columns: auto;
+        }
     }
     .cgf__btn {
         background-color: variables.$darkblue;
