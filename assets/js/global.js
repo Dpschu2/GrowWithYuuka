@@ -1,3 +1,4 @@
+
 const init = () => {
     homeSlider();
     scrollNav();
@@ -21,20 +22,33 @@ const scrollOppositeAnimation = () => {
       $('.scroll-opposite').each(function() {
         const centerMark = $(this).parent().find('.center-marker');
         const centerTop = centerMark.offset().top;
-        const tranY = centerTop - halfTop;
-        const scrollStop = centerTop >= (isDesktop ? halfTop - 200 : halfTop);
-        if (scrollStop) {
+        let tranY = centerTop - halfTop;
+        const adjustedHalf = isDesktop ? halfTop - 200 : halfTop;
+        const canScroll = centerTop >= adjustedHalf;
+        if (canScroll) {
             const addRotate = $(this).hasClass('rotate') ? 'rotate(-16deg) ' : '';
             $(this).css({ 
                 transform: `${addRotate}translateY(${tranY == 0 ? 0 : (tranY / 4)}px)`
             });
         }
+        // else if (!canScroll && adjustedHalf < centerTop) {
+        //     tranY = 0;
+        //     const addRotate = $(this).hasClass('rotate') ? 'rotate(-16deg) ' : '';
+        //     $(this).css({ 
+        //         transform: `${addRotate}translateY(${tranY == 0 ? 0 : (tranY / 4)}px)`
+        //     });
+        // }
       });
     });
 }
 const initReadMore = () => {
     $('.read-more').on('click', () => {
         $('.read-more-text').toggleClass('shown');
+        if (!$('.read-more-text').hasClass('shown')) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#about-col").offset().top
+            }, 200);
+        }
         setTimeout(function(){
             $('.read-more-p').toggleClass('show-less');
         }, 1000);

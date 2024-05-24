@@ -1040,6 +1040,13 @@
 .services-container .services-row .services-content {
   z-index: 1;
 }
+.services-container .services-row .services-content a:not(.button) {
+  color: #008bff !important;
+  text-decoration: none;
+}
+.services-container .services-row .services-content a:not(.button):hover {
+  color: #085fa6 !important;
+}
 .services-container .services-row .services-content h2 {
   font-size: 40px;
   text-transform: uppercase;
