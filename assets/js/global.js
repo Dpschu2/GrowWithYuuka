@@ -22,8 +22,8 @@ const scrollOppositeAnimation = () => {
         const centerMark = $(this).parent().find('.center-marker');
         const centerTop = centerMark.offset().top;
         const tranY = centerTop - halfTop;
-        const scrollBelowCenter = centerTop < halfTop;
-        if (isDesktop || (!isDesktop && !scrollBelowCenter)) {
+        const scrollStop = centerTop >= (isDesktop ? halfTop - 200 : halfTop);
+        if (scrollStop) {
             const addRotate = $(this).hasClass('rotate') ? 'rotate(-16deg) ' : '';
             $(this).css({ 
                 transform: `${addRotate}translateY(${tranY == 0 ? 0 : (tranY / 4)}px)`

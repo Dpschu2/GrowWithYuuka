@@ -402,7 +402,7 @@
   position: -webkit-sticky;
   position: sticky;
   float: left;
-  margin: 50px 0 20px;
+  margin: 50px 0 70px;
 }
 @media (max-width: 767px) {
   #about .video-container {
