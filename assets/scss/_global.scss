@@ -1,6 +1,14 @@
 @use 'variables';
 html {
     background-color: variables.$lightblue;
+
+    &:has([popover]:popover-open) {
+        overflow-y: hidden;
+
+        & > body > *:not([popover]) {
+            pointer-events: none !important;
+        }
+    }
 } 
 body {
   font-family: variables.$bodyFont;

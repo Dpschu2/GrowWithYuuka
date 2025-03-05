@@ -38,9 +38,11 @@
                 padding-left: 50px;
             }
         }
-    }
-} 
- 
+    }  
+}
+.cgf__copy {
+    display: none !important;
+}
 #regForm.signup-container {
     border-radius: 20px;
     backdrop-filter: blur(10px) !important;
@@ -166,9 +168,6 @@
             }
         }
     }
-    .cgf__copy {
-        display: none;
-    }
     .cgf__container {
         box-shadow: none;
         border: none !important;
@@ -251,6 +250,6 @@
         }
     }
 }
-.hide-home {
-    display: none !important;
-}
+// .hide-home {
+//     display: none !important;
+// }

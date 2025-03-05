@@ -16,7 +16,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "core-js": "^3.4.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",

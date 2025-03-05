@@ -1,5 +1,14 @@
 
 const init = () => {
+    includeHTML();
+    initPreLoader();
+    initNavbarStickey();
+    initNavbarSmooth();
+    initNavbarScrollSpy();
+    initBackToTop();
+    initTypedText();
+    initModalUrlCheck();
+
     homeSlider();
     scrollNav();
     scrollOppositeAnimation();
@@ -7,6 +16,77 @@ const init = () => {
     spotifyToggle();
     initReadMore();
     initCoachingForm();
+}
+const initModalUrlCheck = () => {
+    const urlParams = window.location.href;
+    if (urlParams.includes('#privacy-policy')) {
+        $('[popovertarget="privacy-policy"]').click();
+    }
+}
+
+const initPreLoader = () => {
+    $('#status').fadeOut();
+    $('#preloader').delay(350).fadeOut('slow');
+    $('body').delay(350).css({
+        'overflow': 'visible'
+    });
+}
+
+//scroll
+const initNavbarStickey = () => {
+    $(window).on('scroll',function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 50) {
+            $(".sticky").addClass("stickyadd");
+        } else {
+            $(".sticky").removeClass("stickyadd");
+        }
+    });
+}
+
+//Smooth
+const initNavbarSmooth = () => {
+    $('.nav-link').on('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 0
+        }, 500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+}
+
+//ScrollSpy
+const initNavbarScrollSpy = () => {
+    $("#navbarCollapse").scrollspy({
+        offset: 20
+    });
+}
+
+//Back To Top
+const initBackToTop = () => {
+    $(window).on('scroll',function(){
+        if ($(this).scrollTop() > 100) {
+            $('.back_top').addClass('show');
+        } else {
+            $('.back_top').removeClass('show');
+        }
+    }); 
+    $('.back_top').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+        return false;
+    });
+}
+
+const initTypedText = () => {
+    $(".element").each(function() {
+        var $this = $(this);
+        $this.typed({
+            strings: $this.attr('data-elements').split(','),
+            typeSpeed: 100,
+            backDelay: 3000
+        });
+    });
 }
 const scrollOppositeAnimation = () => {
     $(window).scroll(function () {
@@ -31,13 +111,6 @@ const scrollOppositeAnimation = () => {
                 transform: `${addRotate}translateY(${tranY == 0 ? 0 : (tranY / 4)}px)`
             });
         }
-        // else if (!canScroll && adjustedHalf < centerTop) {
-        //     tranY = 0;
-        //     const addRotate = $(this).hasClass('rotate') ? 'rotate(-16deg) ' : '';
-        //     $(this).css({ 
-        //         transform: `${addRotate}translateY(${tranY == 0 ? 0 : (tranY / 4)}px)`
-        //     });
-        // }
       });
     });
 }
@@ -135,6 +208,9 @@ const initCoachingForm = () => {
             });
         });
     }
+    waitForElm('.cgf__copy').then(function(el){
+        el.remove();
+    });
     waitForElm('.cgf__fields').then(function(el){
         $("<progress id=\"form-progress\" value=\"0\" max=\"5\"> 0% </progress>").insertBefore($('.cgf__content'));
         let progress = $('#form-progress');
@@ -168,5 +244,32 @@ const initCoachingForm = () => {
             updateProgress();
         });
     });
+}
+const includeHTML = () => {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
 }
 init();

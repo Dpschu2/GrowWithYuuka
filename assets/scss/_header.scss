@@ -1,4 +1,28 @@
 @use 'variables';
+.custom-nav .navbar-nav {
+    &::before {
+        content: "";
+        position: absolute;
+        left: anchor(var(--target) left);
+        right: anchor(var(--target) right);
+        bottom: anchor(var(--target) bottom);
+        
+    }
+    &:has(:nth-child(1) a:is(:hover, :focus-visible)) {
+        --target: --item-1;
+    }
+    &:has(:nth-child(2) a:is(:hover, :focus-visible)) {
+        --target: --item-2;
+    }
+    li.nav-item {
+        &:nth-child(1) {
+            --anchor: --item-1;
+        }
+        &:nth-child(2) {
+            --anchor: --item-2;
+        }
+    }
+}
 .custom-nav {
     padding: 8px 0px;
     width: 100%;
